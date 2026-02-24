@@ -1,2 +1,2 @@
 # template-umrah
-training create template with tailwindcss
+training create ui template website
