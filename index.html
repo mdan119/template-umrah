@@ -1,7 +1,7 @@
 <!DOCTYPE html>
-<html lang="en" data-bs-theme="light">
+<html lang="id" data-theme="light">
 <head>
-  <meta charset="UTF-8" />
+  <meta charset="UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Al-Barakah Umrah Travel — Journey of the Soul</title>
 
@@ -14,248 +14,335 @@
   <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com"/>
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Inter:wght@300;400;500;600&family=Amiri:wght@400;700&display=swap" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,600&family=DM+Sans:wght@300;400;500;600&family=Amiri:wght@400;700&display=swap" rel="stylesheet"/>
 
   <style>
-    /* =========================================
-       CSS VARIABLES & THEME
-    ========================================= */
+    /* =============================================
+       CSS CUSTOM PROPERTIES
+    ============================================= */
     :root {
-      --cream:       #FDFCF0;
-      --gold:        #C5A059;
-      --gold-light:  #D9BB7B;
-      --gold-dark:   #9E7D3A;
-      --charcoal:    #1E2A38;
-      --charcoal-mid:#2E3D50;
-      --text-muted-light: #6B7B8E;
-      --bg:          #FDFCF0;
-      --surface:     #FFFFFF;
-      --surface2:    #F4F2E4;
-      --text:        #1E2A38;
-      --text-sub:    #4A5568;
-      --border:      rgba(197,160,89,0.2);
-      --shadow:      0 8px 40px rgba(30,42,56,0.08);
-      --shadow-gold: 0 8px 30px rgba(197,160,89,0.25);
-      --navbar-bg:   rgba(253,252,240,0.95);
-      --footer-bg:   #1E2A38;
-      --footer-text: #B8C5D0;
+      --gold:         #C5A059;
+      --gold-light:   #D9BB7B;
+      --gold-dark:    #9E7D3A;
+      --gold-glow:    rgba(197,160,89,0.3);
+      --charcoal:     #111820;
+      --charcoal-mid: #1E2A38;
+      --cream:        #FAF8F0;
+      --cream2:       #F2EFE2;
+      --white:        #FFFFFF;
+
+      /* Theme vars (light default) */
+      --bg:           #FAF8F0;
+      --bg2:          #F2EFE2;
+      --surface:      #FFFFFF;
+      --surface2:     #F7F5EC;
+      --text:         #111820;
+      --text-sub:     #4A5568;
+      --text-muted:   #8896A6;
+      --border:       rgba(197,160,89,0.18);
+      --border-solid: rgba(197,160,89,0.35);
+      --shadow:       0 8px 40px rgba(17,24,32,0.08);
+      --shadow-lg:    0 20px 60px rgba(17,24,32,0.12);
+      --shadow-gold:  0 8px 32px rgba(197,160,89,0.25);
+      --navbar-bg:    rgba(250,248,240,0.92);
+      --footer-bg:    #111820;
+      --footer-text:  #8896A6;
+      --radius-sm:    8px;
+      --radius-md:    16px;
+      --radius-lg:    24px;
+      --radius-xl:    32px;
     }
 
-    [data-bs-theme="dark"] {
-      --bg:          #0D1520;
-      --surface:     #152030;
-      --surface2:    #1A2840;
-      --text:        #EDE8D8;
-      --text-sub:    #9AACBE;
-      --border:      rgba(197,160,89,0.25);
-      --shadow:      0 8px 40px rgba(0,0,0,0.3);
-      --navbar-bg:   rgba(13,21,32,0.96);
-      --footer-bg:   #0A1018;
-      --footer-text: #7A8D9E;
+    [data-theme="dark"] {
+      --bg:           #0C1219;
+      --bg2:          #111820;
+      --surface:      #152030;
+      --surface2:     #1A2A3A;
+      --text:         #EDE8D8;
+      --text-sub:     #90A3B6;
+      --text-muted:   #5A6C7C;
+      --border:       rgba(197,160,89,0.2);
+      --border-solid: rgba(197,160,89,0.35);
+      --shadow:       0 8px 40px rgba(0,0,0,0.3);
+      --shadow-lg:    0 20px 60px rgba(0,0,0,0.4);
+      --navbar-bg:    rgba(12,18,25,0.95);
+      --footer-bg:    #080D12;
+      --footer-text:  #607080;
     }
 
-    /* =========================================
-       BASE
-    ========================================= */
-    *, *::before, *::after { box-sizing: border-box; }
-
-    html { scroll-behavior: smooth; }
+    /* =============================================
+       BASE RESET & TYPOGRAPHY
+    ============================================= */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; font-size: 16px; }
 
     body {
-      font-family: 'Inter', sans-serif;
+      font-family: 'DM Sans', sans-serif;
       background: var(--bg);
       color: var(--text);
-      transition: background 0.4s, color 0.4s;
+      transition: background 0.4s ease, color 0.4s ease;
       overflow-x: hidden;
+      line-height: 1.6;
     }
 
-    h1, h2, h3, h4 {
-      font-family: 'Playfair Display', serif;
+    h1, h2, h3, h4, h5 {
+      font-family: 'Cormorant Garamond', serif;
       color: var(--text);
+      line-height: 1.2;
+    }
+
+    .arabic-text {
+      font-family: 'Amiri', serif;
+      direction: rtl;
+    }
+
+    /* =============================================
+       UTILITY CLASSES
+    ============================================= */
+    .gold { color: var(--gold); }
+    .text-gradient-gold {
+      background: linear-gradient(135deg, var(--gold) 0%, var(--gold-light) 60%, var(--gold) 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
     }
 
     .section-label {
-      font-family: 'Inter', sans-serif;
-      font-size: 0.7rem;
+      font-family: 'DM Sans', sans-serif;
+      font-size: 0.68rem;
       font-weight: 600;
-      letter-spacing: 0.2em;
+      letter-spacing: 0.22em;
       text-transform: uppercase;
       color: var(--gold);
+      display: inline-block;
     }
 
-    .gold { color: var(--gold); }
-    .gold-bg { background: var(--gold); }
-
-    .divider-gold {
-      width: 60px;
-      height: 2px;
-      background: linear-gradient(90deg, var(--gold), var(--gold-light));
-      border-radius: 2px;
+    .divider-ornament {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      margin: 1.2rem 0;
+    }
+    .divider-ornament .line {
+      flex: 1;
+      height: 1px;
+      background: linear-gradient(to right, transparent, var(--gold-light), transparent);
+      max-width: 80px;
+    }
+    .divider-ornament .diamond {
+      width: 7px;
+      height: 7px;
+      background: var(--gold);
+      transform: rotate(45deg);
+      flex-shrink: 0;
     }
 
     section { padding: 100px 0; }
 
+    /* =============================================
+       BUTTONS
+    ============================================= */
     .btn {
-      transition: all 0.5s ease-in-out;
-      border-radius: 4px;
+      font-family: 'DM Sans', sans-serif;
+      font-weight: 600;
+      font-size: 0.88rem;
+      letter-spacing: 0.02em;
+      border-radius: 50px;
+      transition: all 0.4s cubic-bezier(0.4,0,0.2,1);
+      position: relative;
+      overflow: hidden;
     }
+
+    .btn::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: rgba(255,255,255,0.12);
+      opacity: 0;
+      transition: opacity 0.3s;
+    }
+    .btn:hover::after { opacity: 1; }
 
     .btn-gold {
-      background: linear-gradient(135deg, var(--gold) 0%, var(--gold-light) 100%);
+      background: linear-gradient(135deg, var(--gold-dark) 0%, var(--gold) 50%, var(--gold-light) 100%);
+      background-size: 200% 200%;
+      background-position: 0% 50%;
       color: #fff;
       border: none;
-      font-weight: 600;
-      letter-spacing: 0.03em;
-      box-shadow: var(--shadow-gold);
+      box-shadow: 0 4px 20px var(--gold-glow);
     }
-
     .btn-gold:hover {
-      background: linear-gradient(135deg, var(--gold-dark) 0%, var(--gold) 100%);
+      background-position: 100% 50%;
       color: #fff;
-      box-shadow: 0 12px 35px rgba(197,160,89,0.4);
       transform: translateY(-2px);
+      box-shadow: 0 8px 32px rgba(197,160,89,0.4);
     }
 
     .btn-outline-gold {
       border: 1.5px solid var(--gold);
       color: var(--gold);
       background: transparent;
-      font-weight: 600;
     }
-
     .btn-outline-gold:hover {
       background: var(--gold);
       color: #fff;
       transform: translateY(-2px);
+      box-shadow: 0 8px 24px var(--gold-glow);
     }
 
-    /* =========================================
+    .btn-ghost {
+      border: 1.5px solid rgba(255,255,255,0.3);
+      color: #fff;
+      background: rgba(255,255,255,0.08);
+      backdrop-filter: blur(8px);
+    }
+    .btn-ghost:hover {
+      border-color: rgba(255,255,255,0.6);
+      color: #fff;
+      background: rgba(255,255,255,0.15);
+    }
+
+    /* =============================================
        NAVBAR
-    ========================================= */
+    ============================================= */
     #mainNav {
-      transition: all 0.5s ease-in-out;
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 1000;
       padding: 20px 0;
+      transition: all 0.5s cubic-bezier(0.4,0,0.2,1);
       background: transparent;
     }
 
     #mainNav.scrolled {
-      background: var(--navbar-bg) !important;
-      backdrop-filter: blur(12px);
-      -webkit-backdrop-filter: blur(12px);
-      box-shadow: 0 2px 30px rgba(0,0,0,0.08);
+      background: var(--navbar-bg);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
       padding: 12px 0;
+      box-shadow: 0 1px 0 var(--border), 0 4px 40px rgba(0,0,0,0.06);
     }
 
     .navbar-brand {
-      font-family: 'Playfair Display', serif;
-      font-size: 1.4rem;
-      font-weight: 700;
-      color: var(--text) !important;
       text-decoration: none;
+      display: flex;
+      flex-direction: column;
     }
-
-    .navbar-brand span { color: var(--gold); }
-
-    .navbar-brand .brand-arabic {
-      font-family: 'Amiri', serif;
-      font-size: 0.85rem;
-      display: block;
-      color: var(--gold);
+    .brand-main {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.45rem;
+      font-weight: 700;
+      color: #fff;
       line-height: 1;
+      transition: color 0.4s;
     }
+    #mainNav.scrolled .brand-main { color: var(--text); }
+    .brand-main .accent { color: var(--gold-light); }
+    #mainNav.scrolled .brand-main .accent { color: var(--gold); }
+
+    .brand-sub {
+      font-family: 'Amiri', serif;
+      font-size: 0.8rem;
+      color: rgba(255,255,255,0.55);
+      transition: color 0.4s;
+    }
+    #mainNav.scrolled .brand-sub { color: var(--gold); }
 
     .nav-link {
       font-size: 0.875rem;
       font-weight: 500;
-      color: var(--text) !important;
-      transition: color 0.5s ease-in-out;
-      padding: 0.5rem 1rem !important;
-    }
-
-    .nav-link:hover { color: var(--gold) !important; }
-
-    #themeToggle {
-      background: none;
-      border: 1.5px solid var(--border);
-      color: var(--text);
-      width: 38px;
-      height: 38px;
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      cursor: pointer;
-      transition: all 0.5s ease-in-out;
-    }
-
-    #themeToggle:hover {
-      border-color: var(--gold);
-      color: var(--gold);
-    }
-
-    /* =========================================
-       HERO
-    ========================================= */
-    #hero {
-      min-height: 100vh;
+      color: rgba(255,255,255,0.85) !important;
+      transition: color 0.3s;
+      padding: 0.5rem 0.9rem !important;
       position: relative;
-      display: flex;
-      align-items: center;
-      overflow: hidden;
-      padding: 0;
     }
-
-    .hero-bg {
-      position: absolute;
-      inset: 0;
-      background-image:
-        linear-gradient(160deg, rgba(13,21,32,0.78) 0%, rgba(30,42,56,0.55) 50%, rgba(13,21,32,0.82) 100%),
-        url('https://images.unsplash.com/photo-1591604129939-f1efa4d9f7fa?w=1800&q=85&auto=format&fit=crop');
-      background-size: cover;
-      background-position: center;
-      background-attachment: fixed;
-      transition: all 0.5s ease-in-out;
-    }
-
-    .hero-bg::after {
+    .nav-link::after {
       content: '';
       position: absolute;
-      bottom: 0;
-      left: 0;
-      right: 0;
-      height: 180px;
-      background: linear-gradient(to top, var(--bg) 0%, transparent 100%);
+      bottom: 0; left: 0.9rem; right: 0.9rem;
+      height: 1px;
+      background: var(--gold);
+      transform: scaleX(0);
+      transition: transform 0.3s;
     }
+    .nav-link:hover { color: var(--gold-light) !important; }
+    .nav-link:hover::after { transform: scaleX(1); }
 
-    .hero-content { position: relative; z-index: 2; }
+    #mainNav.scrolled .nav-link { color: var(--text) !important; }
+    #mainNav.scrolled .nav-link:hover { color: var(--gold) !important; }
 
-    .hero-arabic {
-      font-family: 'Amiri', serif;
-      font-size: clamp(1.6rem, 4vw, 2.8rem);
-      color: rgba(197,160,89,0.9);
-      letter-spacing: 0.04em;
-      margin-bottom: 0.5rem;
-    }
-
-    .hero-headline {
-      font-size: clamp(2rem, 5.5vw, 4rem);
-      font-weight: 700;
+    #themeToggle {
+      background: rgba(255,255,255,0.12);
+      border: 1px solid rgba(255,255,255,0.25);
       color: #fff;
-      line-height: 1.15;
-      margin-bottom: 1.5rem;
+      width: 38px; height: 38px;
+      border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      cursor: pointer;
+      transition: all 0.35s;
+      flex-shrink: 0;
+    }
+    #themeToggle:hover { border-color: var(--gold); color: var(--gold); background: var(--gold-glow); }
+    #mainNav.scrolled #themeToggle { background: var(--bg2); border-color: var(--border-solid); color: var(--text); }
+
+    .navbar-toggler { border: none !important; padding: 0 !important; }
+    .navbar-toggler:focus { box-shadow: none; }
+    .toggler-icon { color: #fff; font-size: 1.5rem; transition: color 0.3s; }
+    #mainNav.scrolled .toggler-icon { color: var(--text); }
+
+    /* =============================================
+       HERO SLIDESHOW
+    ============================================= */
+    #hero {
+      position: relative;
+      min-height: 100vh;
+      overflow: hidden;
     }
 
-    .hero-headline em {
-      font-style: italic;
-      color: var(--gold-light);
+    /* Slides */
+    .hero-slides {
+      position: absolute;
+      inset: 0;
     }
 
-    .hero-sub {
-      color: rgba(255,255,255,0.75);
-      font-size: 1.05rem;
-      max-width: 540px;
-      line-height: 1.7;
-      margin-bottom: 2.5rem;
+    .hero-slide {
+      position: absolute;
+      inset: 0;
+      opacity: 0;
+      transition: opacity 1.2s ease-in-out;
+      background-size: cover;
+      background-position: center;
+    }
+    .hero-slide.active { opacity: 1; }
+    .hero-slide::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(160deg,
+        rgba(10,16,24,0.75) 0%,
+        rgba(17,24,32,0.45) 50%,
+        rgba(10,16,24,0.80) 100%);
+    }
+
+    .hero-slide-1 { background-image: url('https://images.unsplash.com/photo-1591604129939-f1efa4d9f7fa?w=1800&q=85&auto=format&fit=crop'); }
+    .hero-slide-2 { background-image: url('https://images.unsplash.com/photo-1564769662533-4f00a87b4056?w=1800&q=85&auto=format&fit=crop'); }
+    .hero-slide-3 { background-image: url('https://images.unsplash.com/photo-1541963463532-d68292c34b19?w=1800&q=85&auto=format&fit=crop'); }
+
+    .hero-fade-bottom {
+      position: absolute;
+      bottom: 0; left: 0; right: 0;
+      height: 220px;
+      background: linear-gradient(to top, var(--bg) 0%, transparent 100%);
+      z-index: 3;
+      pointer-events: none;
+    }
+
+    /* Hero Content */
+    .hero-content {
+      position: relative;
+      z-index: 5;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
     }
 
     .hero-badge {
@@ -263,156 +350,253 @@
       align-items: center;
       gap: 8px;
       background: rgba(197,160,89,0.15);
-      border: 1px solid rgba(197,160,89,0.4);
+      border: 1px solid rgba(197,160,89,0.45);
       color: var(--gold-light);
-      padding: 6px 16px;
-      border-radius: 30px;
-      font-size: 0.8rem;
+      padding: 6px 18px;
+      border-radius: 50px;
+      font-size: 0.78rem;
       font-weight: 500;
       margin-bottom: 1.5rem;
+      backdrop-filter: blur(6px);
+    }
+
+    .hero-arabic {
+      font-family: 'Amiri', serif;
+      font-size: clamp(1.4rem, 3.5vw, 2.4rem);
+      color: rgba(197,160,89,0.85);
+      margin-bottom: 0.5rem;
+      letter-spacing: 0.02em;
+    }
+
+    .hero-headline {
+      font-size: clamp(2.2rem, 5.5vw, 4.2rem);
+      font-weight: 700;
+      color: #fff;
+      line-height: 1.12;
+      margin-bottom: 1.4rem;
+    }
+    .hero-headline em {
+      font-style: italic;
+      color: var(--gold-light);
+    }
+
+    .hero-sub {
+      color: rgba(255,255,255,0.72);
+      font-size: 1.05rem;
+      max-width: 520px;
+      line-height: 1.75;
+      margin-bottom: 2.2rem;
     }
 
     .hero-stats {
       display: flex;
       gap: 2.5rem;
       margin-top: 3rem;
+      padding-top: 2rem;
+      border-top: 1px solid rgba(255,255,255,0.12);
     }
-
-    .stat-item { text-align: left; }
-
     .stat-number {
-      font-family: 'Playfair Display', serif;
-      font-size: 1.8rem;
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 2rem;
       font-weight: 700;
       color: var(--gold-light);
       line-height: 1;
+      display: block;
     }
-
     .stat-label {
-      font-size: 0.75rem;
-      color: rgba(255,255,255,0.55);
+      font-size: 0.72rem;
+      color: rgba(255,255,255,0.5);
       text-transform: uppercase;
       letter-spacing: 0.1em;
-      margin-top: 4px;
+      margin-top: 3px;
     }
 
-    .scroll-indicator {
+    /* Slideshow controls */
+    .hero-controls {
       position: absolute;
-      bottom: 40px;
+      bottom: 80px;
       left: 50%;
       transform: translateX(-50%);
-      z-index: 2;
+      z-index: 6;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .hero-dot {
+      width: 8px; height: 8px;
+      background: rgba(255,255,255,0.35);
+      border-radius: 50%;
+      cursor: pointer;
+      transition: all 0.4s;
+      border: none;
+      padding: 0;
+    }
+    .hero-dot.active {
+      width: 28px;
+      border-radius: 4px;
+      background: var(--gold);
+    }
+
+    /* Slide number */
+    .hero-slide-info {
+      position: absolute;
+      right: 40px;
+      bottom: 100px;
+      z-index: 6;
+      text-align: right;
+    }
+    .slide-counter {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.4rem;
+      color: rgba(255,255,255,0.4);
+    }
+    .slide-counter span { color: var(--gold-light); font-size: 2rem; }
+
+    /* Scroll indicator */
+    .scroll-indicator {
+      position: absolute;
+      bottom: 28px;
+      left: 50%;
+      transform: translateX(-50%);
+      z-index: 6;
       display: flex;
       flex-direction: column;
       align-items: center;
-      gap: 6px;
-      color: rgba(255,255,255,0.4);
-      font-size: 0.7rem;
-      letter-spacing: 0.15em;
+      gap: 5px;
+      color: rgba(255,255,255,0.35);
+      font-size: 0.65rem;
+      letter-spacing: 0.2em;
       text-transform: uppercase;
-      animation: bounce 2s infinite;
+      animation: scrollBounce 2s infinite;
+    }
+    @keyframes scrollBounce {
+      0%,100% { transform: translateX(-50%) translateY(0); }
+      50%      { transform: translateX(-50%) translateY(6px); }
     }
 
-    @keyframes bounce {
-      0%, 100% { transform: translateX(-50%) translateY(0); }
-      50% { transform: translateX(-50%) translateY(8px); }
-    }
-
-    /* =========================================
-       COUNTDOWN
-    ========================================= */
-    #countdown-section {
-      padding: 0;
-      background: linear-gradient(135deg, var(--charcoal) 0%, var(--charcoal-mid) 100%);
-      position: relative;
+    /* =============================================
+       TRUST BAR
+    ============================================= */
+    #trust {
+      background: var(--surface);
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+      padding: 24px 0;
       overflow: hidden;
     }
 
+    .trust-ticker {
+      display: flex;
+      gap: 3rem;
+      animation: ticker 30s linear infinite;
+      width: max-content;
+    }
+    .trust-ticker:hover { animation-play-state: paused; }
+
+    @keyframes ticker {
+      0%   { transform: translateX(0); }
+      100% { transform: translateX(-50%); }
+    }
+
+    .trust-item {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      color: var(--text-sub);
+      font-size: 0.85rem;
+      font-weight: 500;
+      white-space: nowrap;
+      flex-shrink: 0;
+    }
+    .trust-item i { color: var(--gold); font-size: 1.1rem; }
+    .trust-dot {
+      width: 4px; height: 4px;
+      background: var(--border-solid);
+      border-radius: 50%;
+      flex-shrink: 0;
+    }
+
+    /* =============================================
+       COUNTDOWN BANNER
+    ============================================= */
+    #countdown-section {
+      background: linear-gradient(135deg, var(--charcoal) 0%, var(--charcoal-mid) 60%, #243040 100%);
+      position: relative;
+      overflow: hidden;
+      padding: 0;
+    }
     #countdown-section::before {
       content: '';
       position: absolute;
-      top: -60px;
-      right: -80px;
-      width: 350px;
-      height: 350px;
-      background: radial-gradient(circle, rgba(197,160,89,0.12) 0%, transparent 70%);
+      top: -100px; right: -100px;
+      width: 400px; height: 400px;
+      background: radial-gradient(circle, rgba(197,160,89,0.1) 0%, transparent 65%);
       border-radius: 50%;
+      pointer-events: none;
+    }
+    #countdown-section::after {
+      content: '';
+      position: absolute;
+      bottom: -80px; left: -80px;
+      width: 300px; height: 300px;
+      background: radial-gradient(circle, rgba(197,160,89,0.07) 0%, transparent 65%);
+      border-radius: 50%;
+      pointer-events: none;
     }
 
     .countdown-inner {
-      padding: 40px 0;
+      padding: 36px 0;
       display: flex;
       align-items: center;
       justify-content: space-between;
       gap: 2rem;
       flex-wrap: wrap;
+      position: relative;
+      z-index: 2;
     }
 
-    .countdown-label {
-      display: flex;
-      align-items: center;
-      gap: 14px;
-    }
-
+    .countdown-label { display: flex; align-items: center; gap: 16px; }
     .countdown-icon {
-      width: 52px;
-      height: 52px;
-      background: rgba(197,160,89,0.2);
+      width: 54px; height: 54px;
+      background: rgba(197,160,89,0.15);
       border: 1px solid rgba(197,160,89,0.4);
-      border-radius: 12px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 1.4rem;
-      color: var(--gold-light);
+      border-radius: 14px;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1.5rem; color: var(--gold-light);
       flex-shrink: 0;
     }
-
     .countdown-title {
-      font-family: 'Playfair Display', serif;
-      font-size: 1.1rem;
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.15rem;
+      font-weight: 600;
       color: #fff;
-      margin: 0;
+      margin-bottom: 3px;
     }
+    .countdown-sub { font-size: 0.78rem; color: rgba(255,255,255,0.5); }
 
-    .countdown-sub {
-      font-size: 0.78rem;
-      color: rgba(255,255,255,0.5);
-      margin: 0;
-    }
-
-    .countdown-timer {
-      display: flex;
-      align-items: center;
-      gap: 6px;
-    }
-
-    .timer-block {
-      text-align: center;
-      min-width: 64px;
-    }
-
+    .countdown-timer { display: flex; align-items: center; gap: 8px; }
+    .timer-block { text-align: center; min-width: 66px; }
     .timer-number {
-      font-family: 'Playfair Display', serif;
-      font-size: 2.4rem;
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 2.5rem;
       font-weight: 700;
       color: var(--gold-light);
       line-height: 1;
       display: block;
       background: rgba(255,255,255,0.05);
-      border: 1px solid rgba(197,160,89,0.25);
+      border: 1px solid rgba(197,160,89,0.2);
       border-radius: 10px;
       padding: 10px 14px;
+      min-width: 66px;
+      text-align: center;
     }
-
     .timer-label {
-      font-size: 0.65rem;
-      color: rgba(255,255,255,0.4);
+      font-size: 0.62rem;
+      color: rgba(255,255,255,0.38);
       text-transform: uppercase;
       letter-spacing: 0.12em;
-      margin-top: 6px;
+      margin-top: 5px;
     }
-
     .timer-sep {
       font-size: 1.8rem;
       color: var(--gold);
@@ -420,568 +604,587 @@
       margin-bottom: 18px;
     }
 
-    /* =========================================
-       FEATURES
-    ========================================= */
-    #features { background: var(--surface2); }
+    /* =============================================
+       FEATURES SECTION
+    ============================================= */
+    #features { background: var(--bg2); }
 
     .feature-card {
       background: var(--surface);
       border: 1px solid var(--border);
-      border-radius: 16px;
-      padding: 2rem 1.5rem;
+      border-radius: var(--radius-lg);
+      padding: 2.2rem 1.8rem;
       text-align: center;
-      transition: all 0.5s ease-in-out;
+      transition: all 0.45s cubic-bezier(0.4,0,0.2,1);
       height: 100%;
+      position: relative;
+      overflow: hidden;
     }
-
+    .feature-card::before {
+      content: '';
+      position: absolute;
+      bottom: 0; left: 0; right: 0;
+      height: 3px;
+      background: linear-gradient(90deg, var(--gold-dark), var(--gold-light));
+      transform: scaleX(0);
+      transition: transform 0.4s;
+      transform-origin: left;
+    }
+    .feature-card:hover::before { transform: scaleX(1); }
     .feature-card:hover {
       transform: translateY(-8px);
       box-shadow: var(--shadow-gold);
-      border-color: var(--gold);
+      border-color: var(--border-solid);
     }
 
     .feature-icon {
-      width: 68px;
-      height: 68px;
-      background: linear-gradient(135deg, rgba(197,160,89,0.15), rgba(197,160,89,0.05));
-      border: 1px solid rgba(197,160,89,0.3);
-      border-radius: 18px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 1.8rem;
+      width: 72px; height: 72px;
+      background: linear-gradient(135deg, rgba(197,160,89,0.12), rgba(197,160,89,0.04));
+      border: 1px solid rgba(197,160,89,0.25);
+      border-radius: 20px;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1.9rem;
       color: var(--gold);
-      margin: 0 auto 1.2rem;
-      transition: all 0.5s ease-in-out;
+      margin: 0 auto 1.4rem;
+      transition: all 0.45s cubic-bezier(0.4,0,0.2,1);
     }
-
     .feature-card:hover .feature-icon {
-      background: linear-gradient(135deg, var(--gold), var(--gold-light));
+      background: linear-gradient(135deg, var(--gold-dark), var(--gold-light));
       color: #fff;
       border-color: transparent;
+      transform: scale(1.1) rotate(-5deg);
     }
-
     .feature-title {
-      font-size: 1rem;
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.15rem;
       font-weight: 600;
-      margin-bottom: 0.5rem;
-      color: var(--text);
+      margin-bottom: 0.6rem;
     }
-
     .feature-text {
       font-size: 0.85rem;
       color: var(--text-sub);
-      line-height: 1.6;
-      margin: 0;
+      line-height: 1.7;
     }
 
-    /* =========================================
-       PACKAGES
-    ========================================= */
+    /* =============================================
+       PACKAGES SECTION
+    ============================================= */
     #packages { background: var(--bg); }
 
     .package-card {
       background: var(--surface);
       border: 1px solid var(--border);
-      border-radius: 20px;
+      border-radius: var(--radius-lg);
       overflow: hidden;
-      transition: all 0.5s ease-in-out;
+      transition: all 0.45s cubic-bezier(0.4,0,0.2,1);
       height: 100%;
       position: relative;
     }
-
-    .package-card:hover {
-      transform: scale(1.03);
-      box-shadow: 0 20px 60px rgba(197,160,89,0.2);
-      border-color: var(--gold);
-    }
-
     .package-card.featured {
       border-color: var(--gold);
       box-shadow: var(--shadow-gold);
     }
+    .package-card:hover {
+      transform: translateY(-10px) scale(1.01);
+      box-shadow: 0 24px 64px rgba(197,160,89,0.2);
+      border-color: var(--border-solid);
+    }
+    .package-card.featured:hover { box-shadow: 0 24px 64px rgba(197,160,89,0.35); }
 
+    .package-img-wrap { position: relative; overflow: hidden; }
     .package-img {
-      width: 100%;
-      height: 200px;
+      width: 100%; height: 210px;
       object-fit: cover;
       display: block;
-      transition: all 0.5s ease-in-out;
+      transition: transform 0.6s cubic-bezier(0.4,0,0.2,1);
     }
-
-    .package-card:hover .package-img {
-      transform: scale(1.05);
-    }
-
-    .package-img-wrap {
-      overflow: hidden;
-      position: relative;
-    }
+    .package-card:hover .package-img { transform: scale(1.07); }
 
     .package-badge {
-      position: absolute;
-      top: 14px;
-      left: 14px;
-      padding: 5px 12px;
-      border-radius: 20px;
-      font-size: 0.72rem;
-      font-weight: 700;
+      position: absolute; top: 14px; left: 14px;
+      padding: 5px 13px;
+      border-radius: 50px;
+      font-size: 0.7rem; font-weight: 700;
       letter-spacing: 0.05em;
       z-index: 2;
     }
-
-    .badge-save {
-      background: #22C55E;
-      color: #fff;
-    }
-
-    .badge-hot {
-      background: #EF4444;
-      color: #fff;
-    }
-
-    .badge-featured {
-      background: linear-gradient(135deg, var(--gold), var(--gold-light));
-      color: #fff;
-    }
+    .badge-save   { background: #22C55E; color: #fff; }
+    .badge-hot    { background: #EF4444; color: #fff; }
+    .badge-featured { background: linear-gradient(135deg, var(--gold-dark), var(--gold-light)); color: #fff; }
 
     .pkg-seats {
-      position: absolute;
-      top: 14px;
-      right: 14px;
-      background: rgba(0,0,0,0.7);
+      position: absolute; top: 14px; right: 14px;
+      background: rgba(0,0,0,0.65);
       color: #fff;
       padding: 4px 10px;
-      border-radius: 16px;
-      font-size: 0.7rem;
-      font-weight: 600;
+      border-radius: 50px;
+      font-size: 0.7rem; font-weight: 600;
       backdrop-filter: blur(6px);
+      z-index: 2;
     }
 
-    .package-body { padding: 1.5rem; }
-
+    .package-body { padding: 1.6rem; }
     .package-tag {
-      font-size: 0.7rem;
-      font-weight: 600;
-      letter-spacing: 0.15em;
-      text-transform: uppercase;
-      color: var(--gold);
-      margin-bottom: 0.4rem;
+      font-size: 0.68rem; font-weight: 700;
+      letter-spacing: 0.15em; text-transform: uppercase;
+      color: var(--gold); margin-bottom: 0.4rem;
     }
-
     .package-name {
-      font-size: 1.25rem;
-      font-weight: 700;
-      margin-bottom: 0.75rem;
-      color: var(--text);
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.4rem; font-weight: 700;
+      margin-bottom: 1rem;
     }
-
-    .package-includes {
-      list-style: none;
-      padding: 0;
-      margin: 0 0 1.2rem;
-    }
-
+    .package-includes { list-style: none; padding: 0; margin: 0 0 1.2rem; }
     .package-includes li {
+      font-size: 0.83rem; color: var(--text-sub);
+      padding: 4px 0;
+      display: flex; align-items: center; gap: 8px;
+    }
+    .package-includes li i { color: var(--gold); font-size: 0.88rem; flex-shrink: 0; }
+    .package-includes li.excluded i { color: var(--text-muted); }
+
+    .price-divider { width: 100%; height: 1px; background: var(--border); margin: 1rem 0; }
+    .price-old { font-size: 0.85rem; color: var(--text-muted); text-decoration: line-through; }
+    .price-new {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 2rem; font-weight: 700;
+      color: var(--gold); line-height: 1;
+    }
+    .price-new small { font-family: 'DM Sans', sans-serif; font-size: 0.82rem; font-weight: 400; color: var(--text-muted); }
+
+    /* Ribbon for featured */
+    .package-ribbon {
+      position: absolute;
+      top: 20px; right: -28px;
+      background: linear-gradient(135deg, var(--gold-dark), var(--gold));
+      color: #fff;
+      font-size: 0.65rem; font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      padding: 5px 36px;
+      transform: rotate(45deg);
+      z-index: 3;
+      box-shadow: 0 2px 12px rgba(197,160,89,0.4);
+    }
+
+    /* =============================================
+       POPULAR NEWS SECTION
+    ============================================= */
+    #news { background: var(--bg2); }
+
+    .news-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-md);
+      overflow: hidden;
+      transition: all 0.4s cubic-bezier(0.4,0,0.2,1);
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+    }
+    .news-card:hover {
+      transform: translateY(-6px);
+      box-shadow: var(--shadow-lg);
+      border-color: var(--border-solid);
+    }
+
+    .news-img-wrap { position: relative; overflow: hidden; }
+    .news-img {
+      width: 100%; height: 185px;
+      object-fit: cover;
+      display: block;
+      transition: transform 0.6s cubic-bezier(0.4,0,0.2,1);
+    }
+    .news-card:hover .news-img { transform: scale(1.06); }
+
+    .news-category {
+      position: absolute; top: 12px; left: 12px;
+      padding: 4px 12px;
+      border-radius: 50px;
+      font-size: 0.66rem; font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      backdrop-filter: blur(8px);
+    }
+    .cat-info { background: rgba(197,160,89,0.85); color: #fff; }
+    .cat-tips { background: rgba(34,197,94,0.85); color: #fff; }
+    .cat-update { background: rgba(59,130,246,0.85); color: #fff; }
+    .cat-special { background: rgba(239,68,68,0.85); color: #fff; }
+
+    .news-body { padding: 1.3rem 1.4rem; flex: 1; display: flex; flex-direction: column; }
+    .news-meta {
+      display: flex; align-items: center; gap: 10px;
+      font-size: 0.72rem; color: var(--text-muted);
+      margin-bottom: 0.6rem;
+    }
+    .news-meta i { color: var(--gold); }
+    .news-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.05rem; font-weight: 600;
+      color: var(--text);
+      line-height: 1.4;
+      margin-bottom: 0.6rem;
+      text-decoration: none;
+      display: block;
+      transition: color 0.3s;
+    }
+    .news-title:hover { color: var(--gold); }
+    .news-excerpt {
       font-size: 0.82rem;
       color: var(--text-sub);
-      padding: 4px 0;
-      display: flex;
-      align-items: center;
-      gap: 8px;
+      line-height: 1.65;
+      flex: 1;
     }
-
-    .package-includes li i {
+    .news-footer {
+      margin-top: 1rem;
+      padding-top: 0.75rem;
+      border-top: 1px solid var(--border);
+      display: flex; align-items: center; justify-content: space-between;
+    }
+    .news-author {
+      display: flex; align-items: center; gap: 8px;
+      font-size: 0.78rem; color: var(--text-muted);
+    }
+    .author-avatar {
+      width: 28px; height: 28px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 1.5px solid var(--border-solid);
+    }
+    .news-read {
+      font-size: 0.75rem; font-weight: 600;
       color: var(--gold);
-      font-size: 0.9rem;
-      flex-shrink: 0;
+      text-decoration: none;
+      display: flex; align-items: center; gap: 4px;
+      transition: gap 0.3s;
     }
+    .news-read:hover { gap: 8px; color: var(--gold-dark); }
 
-    .price-old {
-      font-size: 0.85rem;
-      color: var(--text-sub);
-      text-decoration: line-through;
+    /* Featured news (large) */
+    .news-card.featured-news {
+      flex-direction: row;
     }
-
-    .price-new {
-      font-family: 'Playfair Display', serif;
-      font-size: 1.8rem;
-      font-weight: 700;
-      color: var(--gold);
-      line-height: 1;
+    .news-card.featured-news .news-img-wrap {
+      width: 45%; flex-shrink: 0;
     }
+    .news-card.featured-news .news-img { height: 100%; min-height: 220px; }
+    .news-card.featured-news .news-title { font-size: 1.25rem; }
 
-    .price-new small {
-      font-family: 'Inter', sans-serif;
-      font-size: 0.85rem;
-      font-weight: 400;
-      color: var(--text-sub);
-    }
-
-    .price-divider {
-      width: 100%;
-      height: 1px;
-      background: var(--border);
-      margin: 1rem 0;
-    }
-
-    /* =========================================
+    /* =============================================
        TESTIMONIALS
-    ========================================= */
-    #testimonials { background: var(--surface2); }
+    ============================================= */
+    #testimonials { background: var(--bg); }
 
     .testimonial-card {
       background: var(--surface);
       border: 1px solid var(--border);
-      border-radius: 20px;
+      border-radius: var(--radius-lg);
       padding: 2rem;
       height: 100%;
+      transition: all 0.4s;
+      position: relative;
+    }
+    .testimonial-card::before {
+      content: '\201C';
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 5rem;
+      color: rgba(197,160,89,0.12);
+      position: absolute;
+      top: 10px; left: 20px;
+      line-height: 1;
+    }
+    .testimonial-card:hover {
+      box-shadow: var(--shadow-gold);
+      border-color: var(--border-solid);
     }
 
-    .testi-stars { color: var(--gold); font-size: 0.9rem; margin-bottom: 1rem; }
-
+    .testi-stars { color: var(--gold); font-size: 0.85rem; margin-bottom: 1rem; }
     .testi-text {
-      font-size: 0.9rem;
-      color: var(--text-sub);
-      line-height: 1.75;
-      font-style: italic;
+      font-size: 0.9rem; color: var(--text-sub);
+      line-height: 1.8; font-style: italic;
       margin-bottom: 1.5rem;
+      position: relative; z-index: 1;
     }
+    .testi-avatar { width: 46px; height: 46px; border-radius: 50%; object-fit: cover; border: 2px solid var(--gold); }
+    .testi-name { font-weight: 600; font-size: 0.9rem; color: var(--text); margin: 0; }
+    .testi-city { font-size: 0.75rem; color: var(--text-muted); margin: 0; }
 
-    .testi-avatar {
-      width: 46px;
-      height: 46px;
-      border-radius: 50%;
-      object-fit: cover;
-      border: 2px solid var(--gold);
-    }
-
-    .testi-name {
-      font-weight: 600;
-      font-size: 0.9rem;
-      color: var(--text);
-      margin: 0;
-    }
-
-    .testi-city {
-      font-size: 0.75rem;
-      color: var(--text-sub);
-      margin: 0;
-    }
-
+    /* Custom carousel controls */
     .carousel-control-prev, .carousel-control-next {
-      width: 44px;
-      height: 44px;
+      width: 44px; height: 44px;
       background: var(--surface);
-      border: 1.5px solid var(--border);
+      border: 1.5px solid var(--border-solid);
       border-radius: 50%;
-      top: 50%;
-      transform: translateY(-50%);
-      transition: all 0.5s ease-in-out;
+      top: 50%; transform: translateY(-50%);
+      transition: all 0.35s;
+      opacity: 1;
     }
-
     .carousel-control-prev { left: -60px; }
     .carousel-control-next { right: -60px; }
-
     .carousel-control-prev:hover, .carousel-control-next:hover {
       background: var(--gold);
       border-color: var(--gold);
     }
-
     .carousel-control-prev-icon, .carousel-control-next-icon {
-      filter: invert(1);
-      width: 16px;
-      height: 16px;
+      filter: invert(0) !important;
+      width: 16px; height: 16px;
     }
+    [data-theme="dark"] .carousel-control-prev-icon,
+    [data-theme="dark"] .carousel-control-next-icon { filter: invert(1) !important; }
 
-    [data-bs-theme="dark"] .carousel-control-prev-icon,
-    [data-bs-theme="dark"] .carousel-control-next-icon {
-      filter: none;
-    }
-
-    .carousel-indicators {
-      position: relative;
-      bottom: 0;
-      margin-top: 2rem;
-    }
-
+    .carousel-indicators { position: relative; bottom: 0; margin-top: 2rem; }
     .carousel-indicators button {
-      width: 8px !important;
-      height: 8px !important;
+      width: 8px !important; height: 8px !important;
       border-radius: 50% !important;
-      background: var(--border) !important;
+      background: var(--border-solid) !important;
       border: none !important;
-      transition: all 0.5s ease-in-out !important;
+      transition: all 0.4s !important;
     }
-
     .carousel-indicators button.active {
       background: var(--gold) !important;
       width: 24px !important;
       border-radius: 4px !important;
     }
 
-    /* =========================================
-       FAQ
-    ========================================= */
+    /* =============================================
+       GALLERY STRIP
+    ============================================= */
+    #gallery {
+      padding: 0;
+      overflow: hidden;
+    }
+    .gallery-track {
+      display: flex;
+      gap: 12px;
+      animation: galleryScroll 40s linear infinite;
+      width: max-content;
+    }
+    .gallery-track:hover { animation-play-state: paused; }
+    @keyframes galleryScroll {
+      0%   { transform: translateX(0); }
+      100% { transform: translateX(-50%); }
+    }
+    .gallery-item {
+      width: 260px; height: 180px;
+      border-radius: var(--radius-md);
+      overflow: hidden;
+      flex-shrink: 0;
+      position: relative;
+    }
+    .gallery-item img {
+      width: 100%; height: 100%;
+      object-fit: cover;
+      transition: transform 0.5s;
+    }
+    .gallery-item:hover img { transform: scale(1.08); }
+    .gallery-overlay {
+      position: absolute; inset: 0;
+      background: linear-gradient(to top, rgba(0,0,0,0.5) 0%, transparent 50%);
+      opacity: 0;
+      transition: opacity 0.4s;
+      display: flex; align-items: flex-end;
+      padding: 12px;
+    }
+    .gallery-item:hover .gallery-overlay { opacity: 1; }
+    .gallery-caption { font-size: 0.78rem; color: rgba(255,255,255,0.9); font-weight: 500; }
+
+    /* =============================================
+       FAQ SECTION
+    ============================================= */
     #faq { background: var(--bg); }
 
     .accordion-item {
       background: var(--surface) !important;
       border: 1px solid var(--border) !important;
-      border-radius: 12px !important;
-      margin-bottom: 12px;
+      border-radius: var(--radius-sm) !important;
+      margin-bottom: 10px;
       overflow: hidden;
+      transition: box-shadow 0.3s;
+    }
+    .accordion-item:has(.accordion-button:not(.collapsed)) {
+      border-color: var(--border-solid) !important;
+      box-shadow: 0 4px 20px var(--gold-glow);
     }
 
     .accordion-button {
       background: var(--surface) !important;
       color: var(--text) !important;
-      font-weight: 600;
-      font-size: 0.95rem;
+      font-weight: 600; font-size: 0.93rem;
       padding: 1.2rem 1.5rem;
       box-shadow: none !important;
-      transition: all 0.5s ease-in-out;
+      transition: color 0.3s;
     }
-
-    .accordion-button:not(.collapsed) {
-      color: var(--gold) !important;
-    }
-
+    .accordion-button:not(.collapsed) { color: var(--gold) !important; }
     .accordion-button::after {
-      filter: none;
       background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%23C5A059'%3E%3Cpath fill-rule='evenodd' d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'/%3E%3C/svg%3E") !important;
     }
-
     .accordion-body {
-      font-size: 0.9rem;
-      color: var(--text-sub);
-      line-height: 1.75;
-      padding: 0 1.5rem 1.5rem;
+      font-size: 0.9rem; color: var(--text-sub);
+      line-height: 1.8; padding: 0 1.5rem 1.5rem;
       background: var(--surface);
     }
 
-    /* =========================================
+    /* =============================================
        FOOTER
-    ========================================= */
+    ============================================= */
     #footer {
       background: var(--footer-bg);
       padding: 80px 0 0;
     }
 
     .footer-brand {
-      font-family: 'Playfair Display', serif;
-      font-size: 1.5rem;
-      font-weight: 700;
-      color: #fff;
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.6rem; font-weight: 700; color: #fff;
     }
-
     .footer-brand span { color: var(--gold); }
 
-    .footer-arabic {
-      font-family: 'Amiri', serif;
-      font-size: 0.95rem;
-      color: var(--gold);
-      margin-bottom: 1rem;
-      display: block;
-    }
+    .footer-arabic { font-family: 'Amiri', serif; font-size: 0.95rem; color: var(--gold); margin-bottom: 1rem; display: block; }
+    .footer-text { font-size: 0.85rem; color: var(--footer-text); line-height: 1.7; max-width: 300px; }
+    .footer-heading { color: #fff; font-size: 0.78rem; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; margin-bottom: 1.3rem; }
+    .footer-link { display: block; font-size: 0.85rem; color: var(--footer-text); text-decoration: none; padding: 4px 0; transition: color 0.3s; }
+    .footer-link:hover { color: var(--gold); padding-left: 4px; }
 
-    .footer-text {
-      font-size: 0.85rem;
-      color: var(--footer-text);
-      line-height: 1.7;
-      max-width: 300px;
-    }
+    .footer-contact-item { display: flex; align-items: flex-start; gap: 10px; font-size: 0.85rem; color: var(--footer-text); margin-bottom: 0.75rem; }
+    .footer-contact-item i { color: var(--gold); margin-top: 2px; flex-shrink: 0; }
 
-    .footer-heading {
-      color: #fff;
-      font-size: 0.8rem;
-      font-weight: 700;
-      letter-spacing: 0.15em;
-      text-transform: uppercase;
-      margin-bottom: 1.2rem;
-    }
-
-    .footer-link {
-      display: block;
-      font-size: 0.85rem;
-      color: var(--footer-text);
-      text-decoration: none;
-      padding: 4px 0;
-      transition: color 0.5s ease-in-out;
-    }
-
-    .footer-link:hover { color: var(--gold); }
-
-    .footer-contact-item {
-      display: flex;
-      align-items: flex-start;
-      gap: 10px;
-      font-size: 0.85rem;
-      color: var(--footer-text);
-      margin-bottom: 0.75rem;
-    }
-
-    .footer-contact-item i {
-      color: var(--gold);
-      margin-top: 2px;
-      flex-shrink: 0;
-    }
-
-    .footer-bottom {
-      border-top: 1px solid rgba(255,255,255,0.06);
-      margin-top: 3rem;
-      padding: 1.5rem 0;
-    }
-
-    .footer-bottom p {
-      font-size: 0.78rem;
-      color: rgba(255,255,255,0.3);
-      margin: 0;
-    }
+    .footer-bottom { border-top: 1px solid rgba(255,255,255,0.06); margin-top: 3rem; padding: 1.5rem 0; }
+    .footer-bottom p { font-size: 0.78rem; color: rgba(255,255,255,0.28); margin: 0; }
 
     .license-badge {
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
-      background: rgba(197,160,89,0.1);
-      border: 1px solid rgba(197,160,89,0.25);
-      color: var(--gold);
-      padding: 4px 12px;
-      border-radius: 20px;
-      font-size: 0.72rem;
-      font-weight: 600;
+      display: inline-flex; align-items: center; gap: 6px;
+      background: rgba(197,160,89,0.1); border: 1px solid rgba(197,160,89,0.25);
+      color: var(--gold); padding: 4px 12px; border-radius: 50px;
+      font-size: 0.72rem; font-weight: 600;
     }
 
-    /* =========================================
-       FLOATING WHATSAPP
-    ========================================= */
-    .wa-float {
-      position: fixed;
-      bottom: 28px;
-      right: 28px;
-      z-index: 9999;
-      width: 58px;
-      height: 58px;
-      background: #25D366;
+    .social-icon {
+      width: 38px; height: 38px;
       border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
+      background: rgba(255,255,255,0.06);
+      border: 1px solid rgba(255,255,255,0.1);
+      display: inline-flex; align-items: center; justify-content: center;
+      color: var(--footer-text);
+      font-size: 1rem;
+      text-decoration: none;
+      transition: all 0.35s;
+    }
+    .social-icon:hover { background: var(--gold); border-color: var(--gold); color: #fff; transform: translateY(-3px); }
+
+    /* =============================================
+       FLOATING WHATSAPP
+    ============================================= */
+    .wa-float {
+      position: fixed; bottom: 28px; right: 28px; z-index: 9999;
+      width: 58px; height: 58px; background: #25D366;
+      border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
       text-decoration: none;
       box-shadow: 0 6px 28px rgba(37,211,102,0.45);
-      transition: all 0.5s ease-in-out;
-      animation: pulse-wa 2.5s infinite;
+      transition: all 0.4s;
+      animation: pulseWA 2.5s infinite;
     }
-
-    .wa-float:hover {
-      transform: scale(1.12);
-      box-shadow: 0 10px 40px rgba(37,211,102,0.55);
-    }
-
+    .wa-float:hover { transform: scale(1.12); box-shadow: 0 10px 40px rgba(37,211,102,0.55); }
     .wa-float i { font-size: 1.6rem; color: #fff; }
-
-    @keyframes pulse-wa {
-      0%, 100% { box-shadow: 0 6px 28px rgba(37,211,102,0.45); }
-      50% { box-shadow: 0 6px 40px rgba(37,211,102,0.7); }
+    @keyframes pulseWA {
+      0%,100% { box-shadow: 0 6px 28px rgba(37,211,102,0.45); }
+      50%      { box-shadow: 0 6px 40px rgba(37,211,102,0.7); }
     }
 
     .wa-tooltip {
-      position: absolute;
-      right: 70px;
-      white-space: nowrap;
-      background: var(--charcoal);
-      color: #fff;
-      font-size: 0.78rem;
-      padding: 6px 12px;
-      border-radius: 6px;
-      opacity: 0;
-      pointer-events: none;
-      transition: opacity 0.5s ease-in-out;
+      position: absolute; right: 70px; white-space: nowrap;
+      background: var(--charcoal); color: #fff; font-size: 0.78rem;
+      padding: 6px 12px; border-radius: 6px;
+      opacity: 0; pointer-events: none; transition: opacity 0.3s;
     }
-
     .wa-float:hover .wa-tooltip { opacity: 1; }
 
-    /* =========================================
+    /* =============================================
        SECTION HEADER
-    ========================================= */
+    ============================================= */
     .section-header { margin-bottom: 4rem; }
-
-    .section-header .section-label { display: block; margin-bottom: 0.75rem; }
-
-    .section-header h2 { font-size: clamp(1.8rem, 3.5vw, 2.6rem); margin-bottom: 1rem; }
-
+    .section-header h2 {
+      font-size: clamp(1.9rem, 3.8vw, 2.8rem);
+      margin-bottom: 1rem;
+    }
     .section-header p {
-      font-size: 1rem;
-      color: var(--text-sub);
-      max-width: 580px;
-      line-height: 1.75;
+      font-size: 1rem; color: var(--text-sub);
+      max-width: 560px; line-height: 1.75;
     }
 
-    /* =========================================
-       TRUST BAR
-    ========================================= */
-    #trust {
-      background: var(--surface);
-      border-top: 1px solid var(--border);
-      border-bottom: 1px solid var(--border);
-      padding: 28px 0;
+    /* =============================================
+       RESPONSIVE
+    ============================================= */
+    @media (max-width: 992px) {
+      .carousel-control-prev { left: -10px; }
+      .carousel-control-next { right: -10px; }
+      .hero-slide-info { display: none; }
+      .news-card.featured-news { flex-direction: column; }
+      .news-card.featured-news .news-img-wrap { width: 100%; }
     }
 
-    .trust-item {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 10px;
-      color: var(--text-sub);
-      font-size: 0.85rem;
-      font-weight: 500;
-    }
-
-    .trust-item i { font-size: 1.2rem; color: var(--gold); }
-
-    /* =========================================
-       RESPONSIVE TWEAKS
-    ========================================= */
     @media (max-width: 768px) {
       section { padding: 70px 0; }
       .hero-stats { gap: 1.5rem; }
-      .countdown-inner { flex-direction: column; align-items: flex-start; gap: 1.5rem; }
-      .carousel-control-prev { left: -20px; }
-      .carousel-control-next { right: -20px; }
+      .countdown-inner { flex-direction: column; text-align: center; }
+      .countdown-label { justify-content: center; }
     }
 
     @media (max-width: 576px) {
-      .timer-number { font-size: 1.7rem; min-width: 50px; padding: 8px 10px; }
-      .carousel-control-prev, .carousel-control-next { display: none; }
+      .hero-stats { flex-wrap: wrap; gap: 1.2rem; }
     }
 
-    /* =========================================
-       ORNAMENT LINE
-    ========================================= */
-    .ornament {
-      display: flex;
-      align-items: center;
-      gap: 12px;
-      margin-bottom: 1.2rem;
+    /* =============================================
+       PROGRESS BAR & LOADER
+    ============================================= */
+    .page-loader {
+      position: fixed; inset: 0; z-index: 99999;
+      background: var(--charcoal);
+      display: flex; align-items: center; justify-content: center;
+      flex-direction: column; gap: 20px;
+      transition: opacity 0.6s ease, visibility 0.6s ease;
+    }
+    .page-loader.hidden { opacity: 0; visibility: hidden; }
+    .loader-brand {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.8rem; color: #fff; font-weight: 700;
+    }
+    .loader-brand span { color: var(--gold-light); }
+    .loader-arabic { font-family: 'Amiri', serif; font-size: 1.1rem; color: var(--gold); }
+    .loader-bar {
+      width: 200px; height: 2px; background: rgba(255,255,255,0.1);
+      border-radius: 2px; overflow: hidden;
+    }
+    .loader-bar-fill {
+      height: 100%;
+      background: linear-gradient(90deg, var(--gold-dark), var(--gold-light));
+      border-radius: 2px;
+      animation: loaderFill 1.5s ease-in-out forwards;
+    }
+    @keyframes loaderFill {
+      0%   { width: 0%; }
+      100% { width: 100%; }
     }
 
-    .ornament-line {
-      flex: 1;
-      height: 1px;
-      background: linear-gradient(to right, transparent, var(--gold), transparent);
-      max-width: 80px;
-    }
-
-    .ornament-diamond {
-      width: 8px;
-      height: 8px;
-      background: var(--gold);
-      transform: rotate(45deg);
+    /* Scroll progress bar */
+    #scrollProgress {
+      position: fixed; top: 0; left: 0;
+      height: 3px; z-index: 9998;
+      background: linear-gradient(90deg, var(--gold-dark), var(--gold-light));
+      transition: width 0.1s;
     }
   </style>
 </head>
 <body>
+
+<!-- Page Loader -->
+<div class="page-loader" id="pageLoader">
+  <div class="loader-brand">Al-<span>Barakah</span> Travel</div>
+  <div class="loader-arabic">البركة للسفر والسياحة</div>
+  <div class="loader-bar"><div class="loader-bar-fill"></div></div>
+</div>
+
+<!-- Scroll Progress -->
+<div id="scrollProgress"></div>
 
 <!-- =============================================
      NAVBAR
@@ -989,17 +1192,20 @@
 <nav id="mainNav" class="navbar navbar-expand-lg fixed-top">
   <div class="container">
     <a class="navbar-brand" href="#">
-      Al-<span>Barakah</span> Travel
-      <span class="brand-arabic">البركة للسفر والسياحة</span>
+      <span class="brand-main">Al-<span class="accent">Barakah</span> Travel</span>
+      <span class="brand-sub">البركة للسفر والسياحة</span>
     </a>
-    <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu" aria-label="Toggle navigation">
-      <i class="bi bi-list fs-4" style="color: var(--text)"></i>
+
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu" aria-label="Toggle navigation">
+      <i class="bi bi-list toggler-icon"></i>
     </button>
+
     <div class="collapse navbar-collapse" id="navMenu">
       <ul class="navbar-nav ms-auto align-items-center gap-1">
-        <li class="nav-item"><a class="nav-link" href="#features">Services</a></li>
-        <li class="nav-item"><a class="nav-link" href="#packages">Packages</a></li>
-        <li class="nav-item"><a class="nav-link" href="#testimonials">Testimonials</a></li>
+        <li class="nav-item"><a class="nav-link" href="#features">Layanan</a></li>
+        <li class="nav-item"><a class="nav-link" href="#packages">Paket</a></li>
+        <li class="nav-item"><a class="nav-link" href="#news">Berita</a></li>
+        <li class="nav-item"><a class="nav-link" href="#testimonials">Testimoni</a></li>
         <li class="nav-item"><a class="nav-link" href="#faq">FAQ</a></li>
         <li class="nav-item ms-2">
           <button id="themeToggle" aria-label="Toggle theme">
@@ -1007,8 +1213,8 @@
           </button>
         </li>
         <li class="nav-item ms-2">
-          <a href="#packages" class="btn btn-gold px-4 py-2 rounded-pill">
-            <i class="bi bi-tag-fill me-1"></i> Check Promo
+          <a href="#packages" class="btn btn-gold px-4 py-2">
+            <i class="bi bi-tag-fill me-1"></i> Cek Promo
           </a>
         </li>
       </ul>
@@ -1017,93 +1223,136 @@
 </nav>
 
 <!-- =============================================
-     HERO
+     HERO SLIDESHOW
 ============================================== -->
 <section id="hero">
-  <div class="hero-bg"></div>
+  <!-- Slides Background -->
+  <div class="hero-slides">
+    <div class="hero-slide hero-slide-1 active"></div>
+    <div class="hero-slide hero-slide-2"></div>
+    <div class="hero-slide hero-slide-3"></div>
+  </div>
+
+  <!-- Bottom fade -->
+  <div class="hero-fade-bottom"></div>
+
+  <!-- Slide number indicator -->
+  <div class="hero-slide-info">
+    <div class="slide-counter"><span id="heroCurrentSlide">01</span> / 03</div>
+  </div>
+
+  <!-- Hero Content -->
   <div class="container hero-content">
-    <div class="row align-items-center min-vh-100">
-      <div class="col-lg-7 py-5">
-        <div class="hero-badge mt-5" data-aos="fade-down" data-aos-delay="100">
+    <div class="row align-items-center">
+      <div class="col-lg-8 col-xl-7 py-5">
+        <div class="hero-badge mt-5" data-aos="fade-down" data-aos-delay="200">
           <i class="bi bi-patch-check-fill"></i>
-          Ministry of Religious Affairs Licensed · Est. 2008
+          Terdaftar Kemenag RI · Berdiri Sejak 2008
         </div>
-        <div class="hero-arabic" data-aos="fade-up" data-aos-delay="150">
+
+        <div class="hero-arabic" data-aos="fade-up" data-aos-delay="250">
           بِسْمِ اللَّهِ الرَّحْمَنِ الرَّحِيمِ
         </div>
-        <h1 class="hero-headline" data-aos="fade-up" data-aos-delay="200">
-          Experience a <em>Comfortable</em> &amp; Sunnah-Compliant Umrah Journey
+
+        <h1 class="hero-headline" data-aos="fade-up" data-aos-delay="300">
+          Perjalanan <em>Ibadah</em> yang Nyaman &amp; Berkah
         </h1>
-        <p class="hero-sub" data-aos="fade-up" data-aos-delay="300">
-          We handle every detail — from visa to Haram proximity hotels — so your heart and mind stay focused on what truly matters: your ibadah.
+
+        <p class="hero-sub" data-aos="fade-up" data-aos-delay="380">
+          Kami mengurus setiap detail perjalanan Anda — mulai dari visa, hotel dekat Haram, hingga bimbingan muthawwif berpengalaman — agar hati dan pikiran Anda sepenuhnya fokus pada ibadah.
         </p>
-        <div class="d-flex flex-wrap gap-3" data-aos="fade-up" data-aos-delay="400">
-          <a href="https://wa.me/6281234567890?text=Assalamu%27alaikum%2C%20I%27d%20like%20to%20consult%20about%20Umrah%20packages." class="btn btn-gold btn-lg px-5 py-3 rounded-pill" target="_blank">
-            <i class="bi bi-whatsapp me-2"></i> Consult via WhatsApp
+
+        <div class="d-flex flex-wrap gap-3" data-aos="fade-up" data-aos-delay="460">
+          <a href="https://wa.me/6281234567890?text=Assalamu%27alaikum%2C%20saya%20ingin%20konsultasi%20paket%20umrah." class="btn btn-gold btn-lg px-5 py-3" target="_blank">
+            <i class="bi bi-whatsapp me-2"></i> Konsultasi Gratis
           </a>
-          <a href="#packages" class="btn btn-outline-gold btn-lg px-5 py-3 rounded-pill" style="color:#fff; border-color:rgba(255,255,255,0.4)">
-            <i class="bi bi-grid-fill me-2"></i> View Packages
+          <a href="#packages" class="btn btn-ghost btn-lg px-5 py-3">
+            <i class="bi bi-grid-fill me-2"></i> Lihat Paket
           </a>
         </div>
-        <div class="hero-stats" data-aos="fade-up" data-aos-delay="500">
+
+        <div class="hero-stats" data-aos="fade-up" data-aos-delay="540">
           <div class="stat-item">
-            <div class="stat-number">15K+</div>
-            <div class="stat-label">Pilgrims Served</div>
+            <span class="stat-number">15K+</span>
+            <span class="stat-label">Jamaah Terlayani</span>
           </div>
           <div class="stat-item">
-            <div class="stat-number">16+</div>
-            <div class="stat-label">Years Experience</div>
+            <span class="stat-number">16+</span>
+            <span class="stat-label">Tahun Pengalaman</span>
           </div>
           <div class="stat-item">
-            <div class="stat-number">4.9★</div>
-            <div class="stat-label">Average Rating</div>
+            <span class="stat-number">4.9★</span>
+            <span class="stat-label">Rating Rata-Rata</span>
+          </div>
+          <div class="stat-item">
+            <span class="stat-number">98%</span>
+            <span class="stat-label">Kepuasan Jamaah</span>
           </div>
         </div>
       </div>
     </div>
   </div>
+
+  <!-- Slideshow Dots -->
+  <div class="hero-controls">
+    <button class="hero-dot active" data-slide="0" aria-label="Slide 1"></button>
+    <button class="hero-dot" data-slide="1" aria-label="Slide 2"></button>
+    <button class="hero-dot" data-slide="2" aria-label="Slide 3"></button>
+  </div>
+
+  <!-- Scroll indicator -->
   <div class="scroll-indicator">
     <span>Scroll</span>
-    <i class="bi bi-chevron-down"></i>
+    <i class="bi bi-chevron-double-down"></i>
   </div>
 </section>
 
 <!-- =============================================
-     TRUST BAR
+     TRUST BAR — Marquee
 ============================================== -->
 <div id="trust">
-  <div class="container">
-    <div class="row g-3">
-      <div class="col-6 col-md-3" data-aos="fade-up" data-aos-delay="100">
-        <div class="trust-item">
-          <i class="bi bi-award-fill"></i>
-          <span>KEMENAG Certified</span>
-        </div>
-      </div>
-      <div class="col-6 col-md-3" data-aos="fade-up" data-aos-delay="150">
-        <div class="trust-item">
-          <i class="bi bi-shield-fill-check"></i>
-          <span>Guarantee Protection</span>
-        </div>
-      </div>
-      <div class="col-6 col-md-3" data-aos="fade-up" data-aos-delay="200">
-        <div class="trust-item">
-          <i class="bi bi-airplane-fill"></i>
-          <span>Direct Flights Only</span>
-        </div>
-      </div>
-      <div class="col-6 col-md-3" data-aos="fade-up" data-aos-delay="250">
-        <div class="trust-item">
-          <i class="bi bi-headset"></i>
-          <span>24/7 Support</span>
-        </div>
-      </div>
+  <div class="overflow-hidden">
+    <div class="trust-ticker">
+      <!-- Set 1 -->
+      <div class="trust-item"><i class="bi bi-award-fill"></i><span>Sertifikasi KEMENAG RI</span></div>
+      <div class="trust-dot"></div>
+      <div class="trust-item"><i class="bi bi-shield-fill-check"></i><span>Perlindungan Resmi</span></div>
+      <div class="trust-dot"></div>
+      <div class="trust-item"><i class="bi bi-airplane-fill"></i><span>Penerbangan Langsung</span></div>
+      <div class="trust-dot"></div>
+      <div class="trust-item"><i class="bi bi-headset"></i><span>Support 24/7</span></div>
+      <div class="trust-dot"></div>
+      <div class="trust-item"><i class="bi bi-building"></i><span>Hotel Dekat Haram</span></div>
+      <div class="trust-dot"></div>
+      <div class="trust-item"><i class="bi bi-people-fill"></i><span>15.000+ Jamaah Puas</span></div>
+      <div class="trust-dot"></div>
+      <div class="trust-item"><i class="bi bi-currency-dollar"></i><span>Harga Transparan</span></div>
+      <div class="trust-dot"></div>
+      <div class="trust-item"><i class="bi bi-star-fill"></i><span>Rating 4.9 / 5.0</span></div>
+      <div class="trust-dot"></div>
+      <!-- Set 2 (duplicate for seamless loop) -->
+      <div class="trust-item"><i class="bi bi-award-fill"></i><span>Sertifikasi KEMENAG RI</span></div>
+      <div class="trust-dot"></div>
+      <div class="trust-item"><i class="bi bi-shield-fill-check"></i><span>Perlindungan Resmi</span></div>
+      <div class="trust-dot"></div>
+      <div class="trust-item"><i class="bi bi-airplane-fill"></i><span>Penerbangan Langsung</span></div>
+      <div class="trust-dot"></div>
+      <div class="trust-item"><i class="bi bi-headset"></i><span>Support 24/7</span></div>
+      <div class="trust-dot"></div>
+      <div class="trust-item"><i class="bi bi-building"></i><span>Hotel Dekat Haram</span></div>
+      <div class="trust-dot"></div>
+      <div class="trust-item"><i class="bi bi-people-fill"></i><span>15.000+ Jamaah Puas</span></div>
+      <div class="trust-dot"></div>
+      <div class="trust-item"><i class="bi bi-currency-dollar"></i><span>Harga Transparan</span></div>
+      <div class="trust-dot"></div>
+      <div class="trust-item"><i class="bi bi-star-fill"></i><span>Rating 4.9 / 5.0</span></div>
+      <div class="trust-dot"></div>
     </div>
   </div>
 </div>
 
 <!-- =============================================
-     COUNTDOWN
+     COUNTDOWN BANNER
 ============================================== -->
 <div id="countdown-section">
   <div class="container">
@@ -1113,34 +1362,35 @@
           <i class="bi bi-moon-stars-fill"></i>
         </div>
         <div>
-          <p class="countdown-title">🔥 Ramadan Flash Sale — Limited Seats!</p>
-          <p class="countdown-sub">Special Ramadan departure package — Save up to $800 per person</p>
+          <p class="countdown-title">🔥 Flash Sale Ramadan — Kursi Terbatas!</p>
+          <p class="countdown-sub">Paket keberangkatan spesial Ramadan — Hemat hingga Rp 12 juta per orang</p>
         </div>
       </div>
+
       <div class="d-flex align-items-center gap-3 flex-wrap" data-aos="fade-left">
         <div class="countdown-timer" id="countdownTimer">
           <div class="timer-block">
             <span class="timer-number" id="cd-days">00</span>
-            <div class="timer-label">Days</div>
+            <div class="timer-label">Hari</div>
           </div>
           <span class="timer-sep">:</span>
           <div class="timer-block">
             <span class="timer-number" id="cd-hours">00</span>
-            <div class="timer-label">Hours</div>
+            <div class="timer-label">Jam</div>
           </div>
           <span class="timer-sep">:</span>
           <div class="timer-block">
             <span class="timer-number" id="cd-mins">00</span>
-            <div class="timer-label">Mins</div>
+            <div class="timer-label">Menit</div>
           </div>
           <span class="timer-sep">:</span>
           <div class="timer-block">
             <span class="timer-number" id="cd-secs">00</span>
-            <div class="timer-label">Secs</div>
+            <div class="timer-label">Detik</div>
           </div>
         </div>
-        <a href="https://wa.me/6281234567890?text=I%27d%20like%20to%20book%20the%20Ramadan%20Flash%20Sale%20package!" class="btn btn-gold px-4 py-2 rounded-pill ms-2" target="_blank">
-          Grab Deal <i class="bi bi-arrow-right ms-1"></i>
+        <a href="https://wa.me/6281234567890?text=Saya%20ingin%20booking%20paket%20Flash%20Sale%20Ramadan!" class="btn btn-gold px-4 py-2 ms-2" target="_blank">
+          Ambil Deal <i class="bi bi-arrow-right ms-1"></i>
         </a>
       </div>
     </div>
@@ -1148,44 +1398,48 @@
 </div>
 
 <!-- =============================================
-     FEATURES
+     FEATURES / LAYANAN
 ============================================== -->
 <section id="features">
   <div class="container">
     <div class="row justify-content-center">
       <div class="col-lg-7 text-center section-header" data-aos="fade-up">
-        <span class="section-label">Why Choose Us</span>
-        <h2>A Journey Built on <span class="gold">Trust &amp; Excellence</span></h2>
-        <p class="mx-auto">Every element of your Umrah is planned with precision, compassion, and adherence to the blessed Sunnah.</p>
+        <span class="section-label">Mengapa Kami</span>
+        <div class="divider-ornament justify-content-center mt-2">
+          <div class="line"></div><div class="diamond"></div><div class="line"></div>
+        </div>
+        <h2>Perjalanan Dibangun di Atas <span class="text-gradient-gold">Kepercayaan &amp; Keunggulan</span></h2>
+        <p class="mx-auto mt-3">Setiap detail Umrah Anda direncanakan dengan presisi, kasih sayang, dan kesesuaian dengan Sunnah yang mulia.</p>
       </div>
     </div>
+
     <div class="row g-4">
-      <div class="col-sm-6 col-lg-3" data-aos="fade-up" data-aos-delay="100">
+      <div class="col-sm-6 col-lg-3" data-aos="fade-up" data-aos-delay="80">
         <div class="feature-card">
           <div class="feature-icon"><i class="bi bi-award-fill"></i></div>
-          <div class="feature-title">Official Ministry License</div>
-          <p class="feature-text">Fully registered and audited by KEMENAG with an unblemished 16-year track record.</p>
+          <div class="feature-title">Izin Resmi Kemenag</div>
+          <p class="feature-text">Terdaftar resmi dan diaudit KEMENAG dengan rekam jejak bersih selama 16 tahun beroperasi.</p>
         </div>
       </div>
-      <div class="col-sm-6 col-lg-3" data-aos="fade-up" data-aos-delay="180">
+      <div class="col-sm-6 col-lg-3" data-aos="fade-up" data-aos-delay="160">
         <div class="feature-card">
           <div class="feature-icon"><i class="bi bi-geo-alt-fill"></i></div>
-          <div class="feature-title">Proximity to Haram</div>
-          <p class="feature-text">Hotels within 50–300 meters from Masjid al-Haram and Masjid an-Nabawi.</p>
+          <div class="feature-title">Hotel Dekat Haram</div>
+          <p class="feature-text">Hotel dalam radius 50–300 meter dari Masjid al-Haram dan Masjid an-Nabawi.</p>
         </div>
       </div>
-      <div class="col-sm-6 col-lg-3" data-aos="fade-up" data-aos-delay="260">
+      <div class="col-sm-6 col-lg-3" data-aos="fade-up" data-aos-delay="240">
         <div class="feature-card">
           <div class="feature-icon"><i class="bi bi-person-hearts"></i></div>
-          <div class="feature-title">Experienced Guides</div>
-          <p class="feature-text">Licensed muthawwif fluent in Arabic, English &amp; Indonesian, available 24/7.</p>
+          <div class="feature-title">Muthawwif Berpengalaman</div>
+          <p class="feature-text">Muthawwif berlisensi fasih berbahasa Arab, Inggris, dan Indonesia, tersedia 24 jam.</p>
         </div>
       </div>
-      <div class="col-sm-6 col-lg-3" data-aos="fade-up" data-aos-delay="340">
+      <div class="col-sm-6 col-lg-3" data-aos="fade-up" data-aos-delay="320">
         <div class="feature-card">
-          <div class="feature-icon"><i class="bi bi-currency-dollar"></i></div>
-          <div class="feature-title">Transparent Pricing</div>
-          <p class="feature-text">Zero hidden fees. All costs itemized clearly — what you see is what you pay.</p>
+          <div class="feature-icon"><i class="bi bi-receipt"></i></div>
+          <div class="feature-title">Harga Transparan</div>
+          <p class="feature-text">Nol biaya tersembunyi. Semua biaya dirinci secara jelas — harga yang Anda lihat adalah yang Anda bayar.</p>
         </div>
       </div>
     </div>
@@ -1199,95 +1453,100 @@
   <div class="container">
     <div class="row justify-content-center">
       <div class="col-lg-7 text-center section-header" data-aos="fade-up">
-        <span class="section-label">Our Packages</span>
-        <h2>Choose Your Sacred <span class="gold">Journey</span></h2>
-        <p class="mx-auto">From intimate economy journeys to premium VIP experiences — each package is a complete spiritual retreat.</p>
+        <span class="section-label">Paket Kami</span>
+        <div class="divider-ornament justify-content-center mt-2">
+          <div class="line"></div><div class="diamond"></div><div class="line"></div>
+        </div>
+        <h2>Pilih Perjalanan <span class="text-gradient-gold">Suci Anda</span></h2>
+        <p class="mx-auto mt-3">Dari perjalanan ekonomi yang hemat hingga pengalaman VIP premium — setiap paket adalah retreat spiritual yang lengkap.</p>
       </div>
     </div>
+
     <div class="row g-4 align-items-stretch">
 
-      <!-- ECONOMY PACKAGE -->
-      <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="100">
+      <!-- ECONOMY -->
+      <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="80">
         <div class="package-card">
           <div class="package-img-wrap">
-            <img src="https://images.unsplash.com/photo-1568605117036-5fe5e7bab0b7?w=600&q=80&auto=format&fit=crop" alt="Economy Umrah Package" class="package-img"/>
-            <span class="package-badge badge-save">Save $300</span>
-            <span class="pkg-seats"><i class="bi bi-people-fill me-1"></i>8 Seats Left</span>
+            <img src="https://images.unsplash.com/photo-1568605117036-5fe5e7bab0b7?w=600&q=80&auto=format&fit=crop" alt="Paket Ekonomi Umrah" class="package-img" loading="lazy"/>
+            <span class="package-badge badge-save">Hemat Rp 4jt</span>
+            <span class="pkg-seats"><i class="bi bi-people-fill me-1"></i>8 Kursi Tersisa</span>
           </div>
           <div class="package-body">
-            <div class="package-tag">Economy</div>
-            <div class="package-name">Barakah Economy Package</div>
+            <div class="package-tag">Ekonomi</div>
+            <div class="package-name">Paket Barakah Ekonomi</div>
             <ul class="package-includes">
-              <li><i class="bi bi-check-circle-fill"></i> 9 Days / 7 Nights Umrah</li>
-              <li><i class="bi bi-check-circle-fill"></i> Round-trip Direct Flight</li>
-              <li><i class="bi bi-check-circle-fill"></i> 3★ Hotel, 300m from Haram</li>
-              <li><i class="bi bi-check-circle-fill"></i> Breakfast &amp; Dinner Included</li>
-              <li><i class="bi bi-check-circle-fill"></i> Group Muthawwif Guide</li>
-              <li><i class="bi bi-x-circle text-secondary"></i> Private Airport Transfer</li>
+              <li><i class="bi bi-check-circle-fill"></i> 9 Hari / 7 Malam Umrah</li>
+              <li><i class="bi bi-check-circle-fill"></i> Penerbangan Langsung PP</li>
+              <li><i class="bi bi-check-circle-fill"></i> Hotel Bintang 3, 300m dari Haram</li>
+              <li><i class="bi bi-check-circle-fill"></i> Sarapan &amp; Makan Malam</li>
+              <li><i class="bi bi-check-circle-fill"></i> Muthawwif Grup</li>
+              <li class="excluded"><i class="bi bi-x-circle"></i> Transfer Bandara Pribadi</li>
             </ul>
             <div class="price-divider"></div>
-            <div class="price-old">Was $2,800</div>
-            <div class="price-new">$2,499 <small>/ person</small></div>
-            <a href="https://wa.me/6281234567890?text=Assalamu%27alaikum%2C%20I%27m%20interested%20in%20the%20Barakah%20Economy%20Package%20%24239%20per%20person." class="btn btn-outline-gold w-100 mt-3 py-2 rounded-pill" target="_blank">
-              <i class="bi bi-whatsapp me-2"></i> Book Now
+            <div class="price-old">Sebelumnya Rp 42.000.000</div>
+            <div class="price-new">Rp 38.500.000 <small>/ orang</small></div>
+            <a href="https://wa.me/6281234567890?text=Assalamu%27alaikum%2C%20saya%20tertarik%20dengan%20Paket%20Barakah%20Ekonomi." class="btn btn-outline-gold w-100 mt-3 py-2" target="_blank">
+              <i class="bi bi-whatsapp me-2"></i> Booking Sekarang
             </a>
           </div>
         </div>
       </div>
 
-      <!-- PREMIUM PACKAGE (FEATURED) -->
-      <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="200">
+      <!-- PREMIUM (FEATURED) -->
+      <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="180">
         <div class="package-card featured">
+          <div class="package-ribbon">Terpopuler</div>
           <div class="package-img-wrap">
-            <img src="https://images.unsplash.com/photo-1566073771259-6a8506099945?w=600&q=80&auto=format&fit=crop" alt="Premium Umrah Package" class="package-img"/>
-            <span class="package-badge badge-featured"><i class="bi bi-star-fill me-1"></i>Most Popular</span>
-            <span class="pkg-seats"><i class="bi bi-fire me-1"></i>Only 3 Left!</span>
+            <img src="https://images.unsplash.com/photo-1566073771259-6a8506099945?w=600&q=80&auto=format&fit=crop" alt="Paket Premium Umrah" class="package-img" loading="lazy"/>
+            <span class="package-badge badge-featured"><i class="bi bi-star-fill me-1"></i>Best Value</span>
+            <span class="pkg-seats"><i class="bi bi-fire me-1"></i>Hanya 3 Kursi!</span>
           </div>
           <div class="package-body">
-            <div class="package-tag">Premium ✦ Best Value</div>
-            <div class="package-name">Noor Premium Package</div>
+            <div class="package-tag">Premium ✦ Terbaik</div>
+            <div class="package-name">Paket Noor Premium</div>
             <ul class="package-includes">
-              <li><i class="bi bi-check-circle-fill"></i> 12 Days / 10 Nights Umrah</li>
-              <li><i class="bi bi-check-circle-fill"></i> Round-trip Direct Flight + Priority</li>
-              <li><i class="bi bi-check-circle-fill"></i> 4★ Hotel, 100m from Haram</li>
-              <li><i class="bi bi-check-circle-fill"></i> Full Board Meals</li>
-              <li><i class="bi bi-check-circle-fill"></i> Private Muthawwif Guide</li>
-              <li><i class="bi bi-check-circle-fill"></i> Private Airport Transfer</li>
+              <li><i class="bi bi-check-circle-fill"></i> 12 Hari / 10 Malam Umrah</li>
+              <li><i class="bi bi-check-circle-fill"></i> Penerbangan Langsung + Prioritas</li>
+              <li><i class="bi bi-check-circle-fill"></i> Hotel Bintang 4, 100m dari Haram</li>
+              <li><i class="bi bi-check-circle-fill"></i> Full Board Semua Makan</li>
+              <li><i class="bi bi-check-circle-fill"></i> Muthawwif Pribadi</li>
+              <li><i class="bi bi-check-circle-fill"></i> Transfer Bandara Pribadi</li>
             </ul>
             <div class="price-divider"></div>
-            <div class="price-old">Was $4,299</div>
-            <div class="price-new">$3,799 <small>/ person</small></div>
-            <a href="https://wa.me/6281234567890?text=Assalamu%27alaikum%2C%20I%27m%20very%20interested%20in%20the%20Noor%20Premium%20Package%20%243%2C799%20per%20person." class="btn btn-gold w-100 mt-3 py-2 rounded-pill" target="_blank">
-              <i class="bi bi-whatsapp me-2"></i> Book Now — Save $500
+            <div class="price-old">Sebelumnya Rp 65.000.000</div>
+            <div class="price-new">Rp 58.000.000 <small>/ orang</small></div>
+            <a href="https://wa.me/6281234567890?text=Assalamu%27alaikum%2C%20saya%20sangat%20tertarik%20Paket%20Noor%20Premium." class="btn btn-gold w-100 mt-3 py-2" target="_blank">
+              <i class="bi bi-whatsapp me-2"></i> Booking — Hemat Rp 7jt
             </a>
           </div>
         </div>
       </div>
 
-      <!-- VIP PACKAGE -->
-      <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="300">
+      <!-- VIP -->
+      <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="280">
         <div class="package-card">
           <div class="package-img-wrap">
-            <img src="https://images.unsplash.com/photo-1582972236019-ea4af5ffe587?w=600&q=80&auto=format&fit=crop" alt="VIP Umrah Package" class="package-img"/>
-            <span class="package-badge badge-hot"><i class="bi bi-gem me-1"></i>VIP Exclusive</span>
-            <span class="pkg-seats"><i class="bi bi-lock-fill me-1"></i>2 Suites Left</span>
+            <img src="https://images.unsplash.com/photo-1582972236019-ea4af5ffe587?w=600&q=80&auto=format&fit=crop" alt="Paket VIP Umrah" class="package-img" loading="lazy"/>
+            <span class="package-badge badge-hot"><i class="bi bi-gem me-1"></i>VIP Eksklusif</span>
+            <span class="pkg-seats"><i class="bi bi-lock-fill me-1"></i>2 Suite Tersisa</span>
           </div>
           <div class="package-body">
             <div class="package-tag">VIP Royal</div>
             <div class="package-name">Al-Qamar VIP Suite</div>
             <ul class="package-includes">
-              <li><i class="bi bi-check-circle-fill"></i> 14 Days / 12 Nights Umrah</li>
-              <li><i class="bi bi-check-circle-fill"></i> Business Class Flights</li>
-              <li><i class="bi bi-check-circle-fill"></i> 5★ Luxury Hotel, 50m from Haram</li>
+              <li><i class="bi bi-check-circle-fill"></i> 14 Hari / 12 Malam Umrah</li>
+              <li><i class="bi bi-check-circle-fill"></i> Penerbangan Kelas Bisnis</li>
+              <li><i class="bi bi-check-circle-fill"></i> Hotel Bintang 5, 50m dari Haram</li>
               <li><i class="bi bi-check-circle-fill"></i> Full Board + Room Service</li>
-              <li><i class="bi bi-check-circle-fill"></i> Dedicated Personal Muthawwif</li>
-              <li><i class="bi bi-check-circle-fill"></i> Luxury Limousine Transfer</li>
+              <li><i class="bi bi-check-circle-fill"></i> Muthawwif Pribadi Berdedikasi</li>
+              <li><i class="bi bi-check-circle-fill"></i> Transfer Limusin Mewah</li>
             </ul>
             <div class="price-divider"></div>
-            <div class="price-old">Was $9,500</div>
-            <div class="price-new">$7,999 <small>/ person</small></div>
-            <a href="https://wa.me/6281234567890?text=Assalamu%27alaikum%2C%20I%27m%20interested%20in%20the%20Al-Qamar%20VIP%20Suite%20Package%20%247%2C999%20per%20person." class="btn btn-outline-gold w-100 mt-3 py-2 rounded-pill" target="_blank">
-              <i class="bi bi-whatsapp me-2"></i> Book Now
+            <div class="price-old">Sebelumnya Rp 145.000.000</div>
+            <div class="price-new">Rp 122.000.000 <small>/ orang</small></div>
+            <a href="https://wa.me/6281234567890?text=Assalamu%27alaikum%2C%20saya%20tertarik%20dengan%20Al-Qamar%20VIP%20Suite." class="btn btn-outline-gold w-100 mt-3 py-2" target="_blank">
+              <i class="bi bi-whatsapp me-2"></i> Booking Sekarang
             </a>
           </div>
         </div>
@@ -1298,9 +1557,178 @@
     <!-- Custom Package CTA -->
     <div class="row mt-5" data-aos="fade-up">
       <div class="col text-center">
-        <p class="text-muted mb-3" style="font-size:0.9rem">Looking for a custom group or family package?</p>
-        <a href="https://wa.me/6281234567890?text=I%27d%20like%20to%20inquire%20about%20a%20custom%20group%20Umrah%20package." class="btn btn-gold px-5 py-3 rounded-pill" target="_blank">
-          <i class="bi bi-chat-dots-fill me-2"></i> Request Custom Package
+        <p style="font-size:0.9rem; color: var(--text-muted); margin-bottom: 1rem;">Mencari paket grup atau keluarga yang disesuaikan?</p>
+        <a href="https://wa.me/6281234567890?text=Saya%20ingin%20menanyakan%20paket%20grup%20atau%20keluarga%20Umrah%20khusus." class="btn btn-gold px-5 py-3" target="_blank">
+          <i class="bi bi-chat-dots-fill me-2"></i> Minta Paket Kustom
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- =============================================
+     GALLERY AUTO-SCROLL
+============================================== -->
+<div id="gallery" style="padding: 0; overflow: hidden;">
+  <div style="display:flex; gap:12px; padding: 16px 0;">
+    <div class="gallery-track">
+      <!-- Set 1 -->
+      <div class="gallery-item"><img src="https://images.unsplash.com/photo-1584551246679-0daf3d275d0f?w=400&q=80&auto=format&fit=crop" alt="Masjid al-Haram" loading="lazy"/><div class="gallery-overlay"><span class="gallery-caption">Masjid al-Haram, Mekkah</span></div></div>
+      <div class="gallery-item"><img src="https://images.unsplash.com/photo-1519817914152-22d216bb9170?w=400&q=80&auto=format&fit=crop" alt="Madinah" loading="lazy"/><div class="gallery-overlay"><span class="gallery-caption">Madinah al-Munawwarah</span></div></div>
+      <div class="gallery-item"><img src="https://images.unsplash.com/photo-1560719887-fe3105fa1e55?w=400&q=80&auto=format&fit=crop" alt="Ka'bah" loading="lazy"/><div class="gallery-overlay"><span class="gallery-caption">Ka'bah Baitullah</span></div></div>
+      <div class="gallery-item"><img src="https://images.unsplash.com/photo-1591604129939-f1efa4d9f7fa?w=400&q=80&auto=format&fit=crop" alt="Tawaf" loading="lazy"/><div class="gallery-overlay"><span class="gallery-caption">Tawaf di Masjidil Haram</span></div></div>
+      <div class="gallery-item"><img src="https://images.unsplash.com/photo-1566073771259-6a8506099945?w=400&q=80&auto=format&fit=crop" alt="Hotel" loading="lazy"/><div class="gallery-overlay"><span class="gallery-caption">Hotel Premium Mekkah</span></div></div>
+      <div class="gallery-item"><img src="https://images.unsplash.com/photo-1541963463532-d68292c34b19?w=400&q=80&auto=format&fit=crop" alt="Bimbingan" loading="lazy"/><div class="gallery-overlay"><span class="gallery-caption">Bimbingan Muthawwif</span></div></div>
+      <!-- Set 2 (duplicate for seamless) -->
+      <div class="gallery-item"><img src="https://images.unsplash.com/photo-1584551246679-0daf3d275d0f?w=400&q=80&auto=format&fit=crop" alt="Masjid al-Haram" loading="lazy"/><div class="gallery-overlay"><span class="gallery-caption">Masjid al-Haram, Mekkah</span></div></div>
+      <div class="gallery-item"><img src="https://images.unsplash.com/photo-1519817914152-22d216bb9170?w=400&q=80&auto=format&fit=crop" alt="Madinah" loading="lazy"/><div class="gallery-overlay"><span class="gallery-caption">Madinah al-Munawwarah</span></div></div>
+      <div class="gallery-item"><img src="https://images.unsplash.com/photo-1560719887-fe3105fa1e55?w=400&q=80&auto=format&fit=crop" alt="Ka'bah" loading="lazy"/><div class="gallery-overlay"><span class="gallery-caption">Ka'bah Baitullah</span></div></div>
+      <div class="gallery-item"><img src="https://images.unsplash.com/photo-1591604129939-f1efa4d9f7fa?w=400&q=80&auto=format&fit=crop" alt="Tawaf" loading="lazy"/><div class="gallery-overlay"><span class="gallery-caption">Tawaf di Masjidil Haram</span></div></div>
+      <div class="gallery-item"><img src="https://images.unsplash.com/photo-1566073771259-6a8506099945?w=400&q=80&auto=format&fit=crop" alt="Hotel" loading="lazy"/><div class="gallery-overlay"><span class="gallery-caption">Hotel Premium Mekkah</span></div></div>
+      <div class="gallery-item"><img src="https://images.unsplash.com/photo-1541963463532-d68292c34b19?w=400&q=80&auto=format&fit=crop" alt="Bimbingan" loading="lazy"/><div class="gallery-overlay"><span class="gallery-caption">Bimbingan Muthawwif</span></div></div>
+    </div>
+  </div>
+</div>
+
+<!-- =============================================
+     POPULAR NEWS
+============================================== -->
+<section id="news">
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-lg-7 text-center section-header" data-aos="fade-up">
+        <span class="section-label">Berita &amp; Info</span>
+        <div class="divider-ornament justify-content-center mt-2">
+          <div class="line"></div><div class="diamond"></div><div class="line"></div>
+        </div>
+        <h2>Informasi &amp; <span class="text-gradient-gold">Berita Populer</span></h2>
+        <p class="mx-auto mt-3">Update terbaru seputar umrah, tips perjalanan ibadah, dan informasi penting bagi calon jamaah.</p>
+      </div>
+    </div>
+
+    <div class="row g-4">
+
+      <!-- Featured News -->
+      <div class="col-lg-8" data-aos="fade-up" data-aos-delay="80">
+        <div class="news-card featured-news">
+          <div class="news-img-wrap">
+            <img src="https://images.unsplash.com/photo-1584551246679-0daf3d275d0f?w=800&q=80&auto=format&fit=crop" alt="Regulasi Umrah 2025" class="news-img" loading="lazy" style="height:100%; min-height:260px;"/>
+            <span class="news-category cat-update">Update Terbaru</span>
+          </div>
+          <div class="news-body">
+            <div class="news-meta">
+              <i class="bi bi-calendar3"></i> 20 Feb 2026
+              <span>·</span>
+              <i class="bi bi-clock"></i> 4 menit baca
+            </div>
+            <a href="#" class="news-title" style="font-size:1.35rem;">Regulasi Baru Saudi Arabia 2026: Visa Umrah Lebih Mudah dan Prosesnya Lebih Cepat</a>
+            <p class="news-excerpt">Pemerintah Arab Saudi mengumumkan pembaruan sistem visa umrah yang memungkinkan proses persetujuan hanya dalam 24 jam melalui platform Nusuk. Jamaah Indonesia kini mendapat kuota lebih besar dan kemudahan biometrik di bandara internasional.</p>
+            <div class="news-footer">
+              <div class="news-author">
+                <img src="https://i.pravatar.cc/60?img=33" alt="Editor" class="author-avatar"/>
+                Tim Al-Barakah
+              </div>
+              <a href="#" class="news-read">Baca Selengkapnya <i class="bi bi-arrow-right"></i></a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Side News -->
+      <div class="col-lg-4" data-aos="fade-up" data-aos-delay="160">
+        <div class="news-card mb-4">
+          <div class="news-img-wrap">
+            <img src="https://images.unsplash.com/photo-1591604129939-f1efa4d9f7fa?w=400&q=80&auto=format&fit=crop" alt="Tips Umrah" class="news-img" loading="lazy"/>
+            <span class="news-category cat-tips">Tips Ibadah</span>
+          </div>
+          <div class="news-body">
+            <div class="news-meta"><i class="bi bi-calendar3"></i> 17 Feb 2026</div>
+            <a href="#" class="news-title">10 Tips Memilih Paket Umrah yang Tepat dan Terpercaya</a>
+            <div class="news-footer">
+              <div class="news-author"><img src="https://i.pravatar.cc/60?img=44" alt="Author" class="author-avatar"/> Ustadz Ahmad</div>
+              <a href="#" class="news-read">Baca <i class="bi bi-arrow-right"></i></a>
+            </div>
+          </div>
+        </div>
+
+        <div class="news-card">
+          <div class="news-img-wrap">
+            <img src="https://images.unsplash.com/photo-1566073771259-6a8506099945?w=400&q=80&auto=format&fit=crop" alt="Ramadan Umrah" class="news-img" loading="lazy"/>
+            <span class="news-category cat-special">Spesial</span>
+          </div>
+          <div class="news-body">
+            <div class="news-meta"><i class="bi bi-calendar3"></i> 15 Feb 2026</div>
+            <a href="#" class="news-title">Keistimewaan Umrah di Bulan Ramadan: Pahala Setara Haji</a>
+            <div class="news-footer">
+              <div class="news-author"><img src="https://i.pravatar.cc/60?img=55" alt="Author" class="author-avatar"/> Ustadzah Fatimah</div>
+              <a href="#" class="news-read">Baca <i class="bi bi-arrow-right"></i></a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- More News Row -->
+      <div class="col-sm-6 col-lg-4" data-aos="fade-up" data-aos-delay="100">
+        <div class="news-card">
+          <div class="news-img-wrap">
+            <img src="https://images.unsplash.com/photo-1541963463532-d68292c34b19?w=400&q=80&auto=format&fit=crop" alt="Persiapan Umrah" class="news-img" loading="lazy"/>
+            <span class="news-category cat-info">Panduan</span>
+          </div>
+          <div class="news-body">
+            <div class="news-meta"><i class="bi bi-calendar3"></i> 12 Feb 2026 <span>·</span><i class="bi bi-clock"></i> 5 menit baca</div>
+            <a href="#" class="news-title">Panduan Lengkap Persiapan Dokumen Umrah 2026</a>
+            <p class="news-excerpt">Persyaratan dokumen terbaru yang perlu disiapkan, mulai dari paspor, vaksin, hingga surat mahram.</p>
+            <div class="news-footer">
+              <div class="news-author"><img src="https://i.pravatar.cc/60?img=11" alt="Author" class="author-avatar"/> Tim Legal</div>
+              <a href="#" class="news-read">Baca <i class="bi bi-arrow-right"></i></a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-sm-6 col-lg-4" data-aos="fade-up" data-aos-delay="180">
+        <div class="news-card">
+          <div class="news-img-wrap">
+            <img src="https://images.unsplash.com/photo-1519817914152-22d216bb9170?w=400&q=80&auto=format&fit=crop" alt="Ziarah Madinah" class="news-img" loading="lazy"/>
+            <span class="news-category cat-tips">Ziarah</span>
+          </div>
+          <div class="news-body">
+            <div class="news-meta"><i class="bi bi-calendar3"></i> 10 Feb 2026 <span>·</span><i class="bi bi-clock"></i> 6 menit baca</div>
+            <a href="#" class="news-title">Tempat Ziarah Penting di Madinah yang Wajib Dikunjungi</a>
+            <p class="news-excerpt">Dari Masjid Nabawi hingga Jabal Uhud, inilah destinasi ziarah bersejarah yang memperkaya makna perjalanan ibadah Anda.</p>
+            <div class="news-footer">
+              <div class="news-author"><img src="https://i.pravatar.cc/60?img=22" alt="Author" class="author-avatar"/> Ust. Ibrahim</div>
+              <a href="#" class="news-read">Baca <i class="bi bi-arrow-right"></i></a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-sm-6 col-lg-4" data-aos="fade-up" data-aos-delay="260">
+        <div class="news-card">
+          <div class="news-img-wrap">
+            <img src="https://images.unsplash.com/photo-1560719887-fe3105fa1e55?w=400&q=80&auto=format&fit=crop" alt="Tawaf" class="news-img" loading="lazy"/>
+            <span class="news-category cat-info">Edukasi</span>
+          </div>
+          <div class="news-body">
+            <div class="news-meta"><i class="bi bi-calendar3"></i> 8 Feb 2026 <span>·</span><i class="bi bi-clock"></i> 4 menit baca</div>
+            <a href="#" class="news-title">Tata Cara Tawaf dan Sa'i yang Benar Sesuai Sunnah</a>
+            <p class="news-excerpt">Panduan langkah demi langkah pelaksanaan tawaf 7 putaran dan sa'i antara Safa-Marwa sesuai tuntunan Rasulullah SAW.</p>
+            <div class="news-footer">
+              <div class="news-author"><img src="https://i.pravatar.cc/60?img=33" alt="Author" class="author-avatar"/> Ust. Hamid</div>
+              <a href="#" class="news-read">Baca <i class="bi bi-arrow-right"></i></a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- All News CTA -->
+    <div class="row mt-5" data-aos="fade-up">
+      <div class="col text-center">
+        <a href="#" class="btn btn-outline-gold px-5 py-3">
+          <i class="bi bi-newspaper me-2"></i> Lihat Semua Berita &amp; Artikel
         </a>
       </div>
     </div>
@@ -1314,14 +1742,17 @@
   <div class="container">
     <div class="row justify-content-center">
       <div class="col-lg-7 text-center section-header" data-aos="fade-up">
-        <span class="section-label">Testimonials</span>
-        <h2>Words from Our <span class="gold">Pilgrims</span></h2>
-        <p class="mx-auto">Over 15,000 souls have embarked on their journey with us. Here's what they say.</p>
+        <span class="section-label">Testimoni</span>
+        <div class="divider-ornament justify-content-center mt-2">
+          <div class="line"></div><div class="diamond"></div><div class="line"></div>
+        </div>
+        <h2>Suara dari Para <span class="text-gradient-gold">Jamaah Kami</span></h2>
+        <p class="mx-auto mt-3">Lebih dari 15.000 jiwa telah memulai perjalanan bersama kami. Inilah yang mereka katakan.</p>
       </div>
     </div>
 
     <div class="position-relative px-lg-5" data-aos="fade-up" data-aos-delay="100">
-      <div id="testiCarousel" class="carousel slide" data-bs-ride="carousel" data-bs-interval="5000">
+      <div id="testiCarousel" class="carousel slide" data-bs-ride="carousel" data-bs-interval="5500">
         <div class="carousel-inner">
 
           <!-- Slide 1 -->
@@ -1329,46 +1760,31 @@
             <div class="row g-4">
               <div class="col-md-4">
                 <div class="testimonial-card">
-                  <div class="testi-stars">
-                    <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
-                  </div>
-                  <p class="testi-text">"Al-Barakah made my first Umrah seamless. Our hotel was literally steps from the Haram — I could hear the Adhan so clearly. The muthawwif was knowledgeable and patient."</p>
+                  <div class="testi-stars">★★★★★</div>
+                  <p class="testi-text">"Al-Barakah membuat umrah pertama saya terasa begitu lancar. Hotel kami tepat di seberang Haram — bisa mendengar adzan dengan jelas. Muthawwif sangat berpengetahuan dan sabar."</p>
                   <div class="d-flex align-items-center gap-3">
-                    <img src="https://i.pravatar.cc/100?img=12" alt="Pilgrim" class="testi-avatar"/>
-                    <div>
-                      <p class="testi-name">Ahmad Fauzi</p>
-                      <p class="testi-city">Jakarta, Indonesia</p>
-                    </div>
+                    <img src="https://i.pravatar.cc/100?img=12" alt="Jamaah" class="testi-avatar"/>
+                    <div><p class="testi-name">Budi Santoso</p><p class="testi-city">Jakarta, Indonesia</p></div>
                   </div>
                 </div>
               </div>
               <div class="col-md-4 d-none d-md-block">
                 <div class="testimonial-card">
-                  <div class="testi-stars">
-                    <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
-                  </div>
-                  <p class="testi-text">"We traveled as a family of 6. Everything was organized down to the last detail. The food, the transfers, the guidance — all perfect. We're booking again for Ramadan!"</p>
+                  <div class="testi-stars">★★★★★</div>
+                  <p class="testi-text">"Alhamdulillah, semua dokumen beres diurus tim mereka. Saya tinggal fokus ibadah. Hotel premium, makanan enak, dan pemandunya luar biasa sabar dan berpengetahuan."</p>
                   <div class="d-flex align-items-center gap-3">
-                    <img src="https://i.pravatar.cc/100?img=45" alt="Pilgrim" class="testi-avatar"/>
-                    <div>
-                      <p class="testi-name">Siti Rahmawati</p>
-                      <p class="testi-city">Surabaya, Indonesia</p>
-                    </div>
+                    <img src="https://i.pravatar.cc/100?img=33" alt="Jamaah" class="testi-avatar"/>
+                    <div><p class="testi-name">Siti Rahmawati</p><p class="testi-city">Surabaya, Indonesia</p></div>
                   </div>
                 </div>
               </div>
               <div class="col-md-4 d-none d-md-block">
                 <div class="testimonial-card">
-                  <div class="testi-stars">
-                    <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-half"></i>
-                  </div>
-                  <p class="testi-text">"Truly a blessed journey. The VIP package was worth every penny. Business class seats, luxurious hotel, and a guide who felt like family. Alhamdulillah."</p>
+                  <div class="testi-stars">★★★★★</div>
+                  <p class="testi-text">"Paket VIP benar-benar worth it. Limusin mewah, kamar suite 5 bintang, dan muthawwif pribadi yang menemani sepanjang perjalanan. Pengalaman tak terlupakan!"</p>
                   <div class="d-flex align-items-center gap-3">
-                    <img src="https://i.pravatar.cc/100?img=33" alt="Pilgrim" class="testi-avatar"/>
-                    <div>
-                      <p class="testi-name">Budi Santoso</p>
-                      <p class="testi-city">Bandung, Indonesia</p>
-                    </div>
+                    <img src="https://i.pravatar.cc/100?img=55" alt="Jamaah" class="testi-avatar"/>
+                    <div><p class="testi-name">Hj. Marlina</p><p class="testi-city">Bandung, Indonesia</p></div>
                   </div>
                 </div>
               </div>
@@ -1380,46 +1796,31 @@
             <div class="row g-4">
               <div class="col-md-4">
                 <div class="testimonial-card">
-                  <div class="testi-stars">
-                    <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
-                  </div>
-                  <p class="testi-text">"Professional from A to Z. The visa process was handled quickly, hotel was excellent, and the muthawwif's knowledge of Islamic history made the journey unforgettable."</p>
+                  <div class="testi-stars">★★★★★</div>
+                  <p class="testi-text">"Profesional dari A sampai Z. Proses visa sangat cepat, hotel sangat bagus, dan muthawwif yang menjelaskan sejarah Islam membuat perjalanan ini tak terlupakan."</p>
                   <div class="d-flex align-items-center gap-3">
-                    <img src="https://i.pravatar.cc/100?img=22" alt="Pilgrim" class="testi-avatar"/>
-                    <div>
-                      <p class="testi-name">Nur Hidayah</p>
-                      <p class="testi-city">Medan, Indonesia</p>
-                    </div>
+                    <img src="https://i.pravatar.cc/100?img=22" alt="Jamaah" class="testi-avatar"/>
+                    <div><p class="testi-name">Nur Hidayah</p><p class="testi-city">Medan, Indonesia</p></div>
                   </div>
                 </div>
               </div>
               <div class="col-md-4 d-none d-md-block">
                 <div class="testimonial-card">
-                  <div class="testi-stars">
-                    <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
-                  </div>
-                  <p class="testi-text">"I was anxious being a first-time solo pilgrim, but the team made me feel so safe. They checked on us every day and the group spirit was wonderful."</p>
+                  <div class="testi-stars">★★★★★</div>
+                  <p class="testi-text">"Awalnya khawatir pergi solo, tapi tim Al-Barakah membuat saya merasa sangat aman. Mereka mengecek kondisi kami setiap hari dan semangat kelompoknya luar biasa."</p>
                   <div class="d-flex align-items-center gap-3">
-                    <img src="https://i.pravatar.cc/100?img=57" alt="Pilgrim" class="testi-avatar"/>
-                    <div>
-                      <p class="testi-name">Dewi Lestari</p>
-                      <p class="testi-city">Yogyakarta, Indonesia</p>
-                    </div>
+                    <img src="https://i.pravatar.cc/100?img=57" alt="Jamaah" class="testi-avatar"/>
+                    <div><p class="testi-name">Dewi Lestari</p><p class="testi-city">Yogyakarta, Indonesia</p></div>
                   </div>
                 </div>
               </div>
               <div class="col-md-4 d-none d-md-block">
                 <div class="testimonial-card">
-                  <div class="testi-stars">
-                    <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
-                  </div>
-                  <p class="testi-text">"Transparent pricing is what won me over. No surprises, no hidden fees. Exactly as promised. That integrity is rare in this industry. Highly recommended."</p>
+                  <div class="testi-stars">★★★★★</div>
+                  <p class="testi-text">"Harga transparan yang memenangkan hati saya. Tidak ada kejutan, tidak ada biaya tersembunyi. Persis seperti yang dijanjikan. Integritas ini langka di industri ini."</p>
                   <div class="d-flex align-items-center gap-3">
-                    <img src="https://i.pravatar.cc/100?img=68" alt="Pilgrim" class="testi-avatar"/>
-                    <div>
-                      <p class="testi-name">Hendra Wijaya</p>
-                      <p class="testi-city">Makassar, Indonesia</p>
-                    </div>
+                    <img src="https://i.pravatar.cc/100?img=68" alt="Jamaah" class="testi-avatar"/>
+                    <div><p class="testi-name">Hendra Wijaya</p><p class="testi-city">Makassar, Indonesia</p></div>
                   </div>
                 </div>
               </div>
@@ -1428,7 +1829,6 @@
 
         </div>
 
-        <!-- Controls -->
         <button class="carousel-control-prev" type="button" data-bs-target="#testiCarousel" data-bs-slide="prev">
           <span class="carousel-control-prev-icon"></span>
         </button>
@@ -1436,7 +1836,6 @@
           <span class="carousel-control-next-icon"></span>
         </button>
 
-        <!-- Indicators -->
         <div class="carousel-indicators position-relative bottom-0 mt-4">
           <button type="button" data-bs-target="#testiCarousel" data-bs-slide-to="0" class="active" aria-current="true"></button>
           <button type="button" data-bs-target="#testiCarousel" data-bs-slide-to="1"></button>
@@ -1449,14 +1848,18 @@
 <!-- =============================================
      FAQ
 ============================================== -->
-<section id="faq">
+<section id="faq" style="background: var(--bg2);">
   <div class="container">
     <div class="row justify-content-center">
       <div class="col-lg-7 text-center section-header" data-aos="fade-up">
         <span class="section-label">FAQ</span>
-        <h2>Frequently Asked <span class="gold">Questions</span></h2>
-        <p class="mx-auto">Everything you need to know before embarking on your blessed journey.</p>
+        <div class="divider-ornament justify-content-center mt-2">
+          <div class="line"></div><div class="diamond"></div><div class="line"></div>
+        </div>
+        <h2>Pertanyaan yang Sering <span class="text-gradient-gold">Ditanyakan</span></h2>
+        <p class="mx-auto mt-3">Semua yang perlu Anda ketahui sebelum memulai perjalanan ibadah yang penuh berkah.</p>
       </div>
+
       <div class="col-lg-8" data-aos="fade-up" data-aos-delay="100">
         <div class="accordion" id="faqAccordion">
 
@@ -1464,12 +1867,12 @@
             <h2 class="accordion-header">
               <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#faq1">
                 <i class="bi bi-question-circle-fill me-2" style="color:var(--gold)"></i>
-                What documents are required for Umrah?
+                Dokumen apa saja yang dibutuhkan untuk Umrah?
               </button>
             </h2>
             <div id="faq1" class="accordion-collapse collapse show" data-bs-parent="#faqAccordion">
               <div class="accordion-body">
-                You will need a valid passport (at least 6 months validity), 4 passport-sized photos, a completed Umrah visa application form, proof of vaccination (Meningitis + COVID-19), and for women under 45 without a mahram, a certified group travel permit. Our team handles all documentation on your behalf.
+                Anda memerlukan paspor yang masih berlaku (minimal 6 bulan), 4 lembar foto ukuran paspor, formulir aplikasi visa Umrah, bukti vaksinasi (Meningitis + COVID-19), dan bagi wanita di bawah 45 tahun tanpa mahram, diperlukan surat izin perjalanan grup bersertifikat. Tim kami menangani semua dokumentasi atas nama Anda.
               </div>
             </div>
           </div>
@@ -1478,12 +1881,12 @@
             <h2 class="accordion-header">
               <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq2">
                 <i class="bi bi-question-circle-fill me-2" style="color:var(--gold)"></i>
-                How far are your hotels from Masjid al-Haram?
+                Seberapa dekat hotel Anda dengan Masjid al-Haram?
               </button>
             </h2>
             <div id="faq2" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
               <div class="accordion-body">
-                Our Economy package hotels are 200–300 meters away, our Premium package hotels are within 100 meters, and our VIP suite is just 50 meters from the main gate of Masjid al-Haram — allowing you to walk to every prayer with ease.
+                Hotel paket Ekonomi kami berjarak 200–300 meter, hotel paket Premium dalam radius 100 meter, dan VIP suite hanya 50 meter dari pintu utama Masjid al-Haram — sehingga Anda bisa berjalan kaki ke setiap shalat dengan mudah.
               </div>
             </div>
           </div>
@@ -1492,12 +1895,12 @@
             <h2 class="accordion-header">
               <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq3">
                 <i class="bi bi-question-circle-fill me-2" style="color:var(--gold)"></i>
-                Can I travel solo without a mahram (for women)?
+                Bisakah wanita berangkat umrah tanpa mahram?
               </button>
             </h2>
             <div id="faq3" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
               <div class="accordion-body">
-                Yes. Women aged 45 and above may perform Umrah in an organized group without a mahram under Saudi Arabia's current regulations. We provide all necessary documentation. Women under 45 require a mahram or must be part of a licensed group with special permits, which we can arrange.
+                Ya. Wanita berusia 45 tahun ke atas dapat melaksanakan Umrah dalam kelompok terorganisir tanpa mahram sesuai regulasi Saudi Arabia saat ini. Kami menyediakan semua dokumen yang diperlukan. Wanita di bawah 45 tahun membutuhkan mahram atau harus bergabung dalam grup berlisensi dengan izin khusus yang dapat kami urus.
               </div>
             </div>
           </div>
@@ -1506,12 +1909,12 @@
             <h2 class="accordion-header">
               <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq4">
                 <i class="bi bi-question-circle-fill me-2" style="color:var(--gold)"></i>
-                How do I make payment and is my deposit refundable?
+                Bagaimana cara pembayaran dan apakah deposit bisa dikembalikan?
               </button>
             </h2>
             <div id="faq4" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
               <div class="accordion-body">
-                We accept bank transfer, credit card (Visa/Mastercard), and e-wallets. A 30% deposit secures your seat. Deposits are refundable up to 90 days before departure (minus administrative fees). Within 90 days, the deposit is non-refundable but transferable to another departure date.
+                Kami menerima transfer bank, kartu kredit (Visa/Mastercard), dan dompet digital. Deposit 30% untuk mengamankan kursi Anda. Deposit dapat dikembalikan hingga 90 hari sebelum keberangkatan (dikurangi biaya administrasi). Dalam 90 hari, deposit tidak dapat dikembalikan namun dapat dipindahkan ke tanggal keberangkatan lain.
               </div>
             </div>
           </div>
@@ -1520,12 +1923,12 @@
             <h2 class="accordion-header">
               <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq5">
                 <i class="bi bi-question-circle-fill me-2" style="color:var(--gold)"></i>
-                What is included in the package price?
+                Apa saja yang sudah termasuk dalam harga paket?
               </button>
             </h2>
             <div id="faq5" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
               <div class="accordion-body">
-                All package prices include round-trip airfare, hotel accommodation, meals as specified per package, ground transportation, Umrah visa fees, muthawwif services, and a travel kit (ihram garment for men, prayer book, and zamzam container). Personal expenses, voluntary donations, and shopping are excluded.
+                Semua harga paket sudah mencakup tiket pesawat PP, akomodasi hotel, makan sesuai ketentuan paket, transportasi darat, biaya visa Umrah, layanan muthawwif, dan travel kit (kain ihram untuk pria, buku panduan doa, dan wadah zamzam). Pengeluaran pribadi, donasi sukarela, dan belanja tidak termasuk.
               </div>
             </div>
           </div>
@@ -1542,46 +1945,50 @@
 <footer id="footer">
   <div class="container">
     <div class="row g-5">
+
       <!-- Brand -->
-      <div class="col-lg-4" data-aos="fade-up" data-aos-delay="100">
+      <div class="col-lg-4" data-aos="fade-up" data-aos-delay="80">
         <div class="footer-brand">Al-<span>Barakah</span> Travel</div>
         <span class="footer-arabic">البركة للسفر والسياحة</span>
-        <p class="footer-text">Guiding pilgrims since 2008 with integrity, compassion, and unwavering commitment to a sunnah-compliant Umrah experience.</p>
-        <div class="mt-3">
-          <span class="license-badge"><i class="bi bi-patch-check-fill"></i> KEMENAG License: PPIU-2008-0421</span>
+        <p class="footer-text">Membimbing jamaah sejak 2008 dengan integritas, kasih sayang, dan komitmen teguh untuk pengalaman Umrah yang sesuai Sunnah.</p>
+        <div class="mt-3 mb-4">
+          <span class="license-badge"><i class="bi bi-patch-check-fill"></i> Izin KEMENAG: PPIU-2008-0421</span>
         </div>
-        <div class="d-flex gap-3 mt-4">
-          <a href="#" class="text-decoration-none" style="color: var(--gold); font-size: 1.3rem; transition: all 0.5s ease-in-out;" onmouseover="this.style.opacity=0.7" onmouseout="this.style.opacity=1"><i class="bi bi-instagram"></i></a>
-          <a href="#" class="text-decoration-none" style="color: var(--gold); font-size: 1.3rem; transition: all 0.5s ease-in-out;" onmouseover="this.style.opacity=0.7" onmouseout="this.style.opacity=1"><i class="bi bi-facebook"></i></a>
-          <a href="#" class="text-decoration-none" style="color: var(--gold); font-size: 1.3rem; transition: all 0.5s ease-in-out;" onmouseover="this.style.opacity=0.7" onmouseout="this.style.opacity=1"><i class="bi bi-youtube"></i></a>
-          <a href="#" class="text-decoration-none" style="color: var(--gold); font-size: 1.3rem; transition: all 0.5s ease-in-out;" onmouseover="this.style.opacity=0.7" onmouseout="this.style.opacity=1"><i class="bi bi-tiktok"></i></a>
+        <div class="d-flex gap-2">
+          <a href="#" class="social-icon" aria-label="Instagram"><i class="bi bi-instagram"></i></a>
+          <a href="#" class="social-icon" aria-label="Facebook"><i class="bi bi-facebook"></i></a>
+          <a href="#" class="social-icon" aria-label="YouTube"><i class="bi bi-youtube"></i></a>
+          <a href="#" class="social-icon" aria-label="TikTok"><i class="bi bi-tiktok"></i></a>
+          <a href="#" class="social-icon" aria-label="WhatsApp"><i class="bi bi-whatsapp"></i></a>
         </div>
       </div>
 
       <!-- Quick Links -->
-      <div class="col-6 col-lg-2" data-aos="fade-up" data-aos-delay="150">
-        <div class="footer-heading">Quick Links</div>
-        <a href="#features" class="footer-link">Our Services</a>
-        <a href="#packages" class="footer-link">Packages</a>
-        <a href="#testimonials" class="footer-link">Testimonials</a>
+      <div class="col-6 col-lg-2" data-aos="fade-up" data-aos-delay="140">
+        <div class="footer-heading">Navigasi</div>
+        <a href="#features" class="footer-link">Layanan Kami</a>
+        <a href="#packages" class="footer-link">Paket Umrah</a>
+        <a href="#news" class="footer-link">Berita &amp; Info</a>
+        <a href="#testimonials" class="footer-link">Testimoni</a>
         <a href="#faq" class="footer-link">FAQ</a>
-        <a href="#" class="footer-link">Terms &amp; Conditions</a>
-        <a href="#" class="footer-link">Privacy Policy</a>
+        <a href="#" class="footer-link">Syarat &amp; Ketentuan</a>
+        <a href="#" class="footer-link">Kebijakan Privasi</a>
       </div>
 
       <!-- Packages -->
-      <div class="col-6 col-lg-2" data-aos="fade-up" data-aos-delay="200">
-        <div class="footer-heading">Packages</div>
-        <a href="#packages" class="footer-link">Economy Package</a>
-        <a href="#packages" class="footer-link">Premium Package</a>
-        <a href="#packages" class="footer-link">VIP Suite Package</a>
-        <a href="#packages" class="footer-link">Ramadan Special</a>
-        <a href="#packages" class="footer-link">Group Package</a>
+      <div class="col-6 col-lg-2" data-aos="fade-up" data-aos-delay="180">
+        <div class="footer-heading">Paket</div>
+        <a href="#packages" class="footer-link">Paket Ekonomi</a>
+        <a href="#packages" class="footer-link">Paket Premium</a>
+        <a href="#packages" class="footer-link">VIP Suite</a>
+        <a href="#packages" class="footer-link">Spesial Ramadan</a>
+        <a href="#packages" class="footer-link">Paket Grup</a>
+        <a href="#packages" class="footer-link">Paket Keluarga</a>
       </div>
 
       <!-- Contact -->
-      <div class="col-lg-4" data-aos="fade-up" data-aos-delay="250">
-        <div class="footer-heading">Contact Us</div>
+      <div class="col-lg-4" data-aos="fade-up" data-aos-delay="220">
+        <div class="footer-heading">Hubungi Kami</div>
         <div class="footer-contact-item">
           <i class="bi bi-geo-alt-fill"></i>
           <span>Jl. Masjid Agung No. 12, Menteng, Jakarta Pusat 10310, Indonesia</span>
@@ -1596,23 +2003,24 @@
         </div>
         <div class="footer-contact-item">
           <i class="bi bi-envelope-fill"></i>
-          <span>info@albarakah-travel.com</span>
+          <span>info@albarakahtravel.co.id</span>
         </div>
         <div class="footer-contact-item">
           <i class="bi bi-clock-fill"></i>
-          <span>Mon–Sat: 08:00 – 17:00 WIB</span>
+          <span>Senin–Sabtu: 08:00 – 17:00 WIB</span>
         </div>
       </div>
+
     </div>
 
     <!-- Footer Bottom -->
     <div class="footer-bottom">
       <div class="row align-items-center">
         <div class="col-md-6">
-          <p>© 2025 Al-Barakah Travel &amp; Tour. All rights reserved. Official Umrah &amp; Hajj Travel Bureau.</p>
+          <p>© 2026 Al-Barakah Travel &amp; Tour. Seluruh hak cipta dilindungi. Biro Perjalanan Umrah &amp; Haji Resmi.</p>
         </div>
         <div class="col-md-6 text-md-end mt-2 mt-md-0">
-          <p style="color: rgba(255,255,255,0.2); font-size:0.72rem">Regulated by Kementerian Agama RI · IATA Accredited · ASITA Member</p>
+          <p>Diregulasi oleh Kementerian Agama RI · Akreditasi IATA · Anggota ASITA</p>
         </div>
       </div>
     </div>
@@ -1622,8 +2030,8 @@
 <!-- =============================================
      FLOATING WHATSAPP
 ============================================== -->
-<a href="https://wa.me/6281234567890?text=Assalamu%27alaikum%2C%20I%27d%20like%20to%20inquire%20about%20Umrah%20packages." class="wa-float" target="_blank" aria-label="Chat on WhatsApp">
-  <span class="wa-tooltip">Chat with Us</span>
+<a href="https://wa.me/6281234567890?text=Assalamu%27alaikum%2C%20saya%20ingin%20menanyakan%20paket%20Umrah." class="wa-float" target="_blank" aria-label="Chat WhatsApp">
+  <span class="wa-tooltip">Chat dengan Kami</span>
   <i class="bi bi-whatsapp"></i>
 </a>
 
@@ -1634,98 +2042,165 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
 
 <script>
-  /* =========================================
-     AOS INIT
-  ========================================= */
-  AOS.init({
-    duration: 700,
-    easing: 'ease-out-cubic',
-    once: true,
-    offset: 60
+/* =========================================
+   PAGE LOADER
+========================================= */
+window.addEventListener('load', () => {
+  setTimeout(() => {
+    document.getElementById('pageLoader').classList.add('hidden');
+  }, 1600);
+});
+
+/* =========================================
+   AOS INIT
+========================================= */
+AOS.init({
+  duration: 750,
+  easing: 'ease-out-cubic',
+  once: true,
+  offset: 50
+});
+
+/* =========================================
+   SCROLL PROGRESS BAR
+========================================= */
+window.addEventListener('scroll', () => {
+  const scrollTop = document.documentElement.scrollTop;
+  const scrollHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+  const progress = (scrollTop / scrollHeight) * 100;
+  document.getElementById('scrollProgress').style.width = progress + '%';
+}, { passive: true });
+
+/* =========================================
+   NAVBAR SCROLL
+========================================= */
+const nav = document.getElementById('mainNav');
+window.addEventListener('scroll', () => {
+  nav.classList.toggle('scrolled', window.scrollY > 60);
+}, { passive: true });
+
+/* =========================================
+   DARK / LIGHT THEME TOGGLE
+========================================= */
+const toggleBtn = document.getElementById('themeToggle');
+const themeIcon = document.getElementById('themeIcon');
+const htmlEl    = document.documentElement;
+
+const savedTheme = localStorage.getItem('albarakah-theme') || 'light';
+htmlEl.setAttribute('data-theme', savedTheme);
+themeIcon.className = savedTheme === 'dark' ? 'bi bi-sun-fill' : 'bi bi-moon-stars-fill';
+
+toggleBtn.addEventListener('click', () => {
+  const current = htmlEl.getAttribute('data-theme');
+  const next = current === 'dark' ? 'light' : 'dark';
+  htmlEl.setAttribute('data-theme', next);
+  themeIcon.className = next === 'dark' ? 'bi bi-sun-fill' : 'bi bi-moon-stars-fill';
+  localStorage.setItem('albarakah-theme', next);
+});
+
+/* =========================================
+   HERO SLIDESHOW
+========================================= */
+(function() {
+  const slides = document.querySelectorAll('.hero-slide');
+  const dots   = document.querySelectorAll('.hero-dot');
+  const counter = document.getElementById('heroCurrentSlide');
+  let current = 0;
+  let timer;
+
+  function goToSlide(idx) {
+    slides[current].classList.remove('active');
+    dots[current].classList.remove('active');
+    current = (idx + slides.length) % slides.length;
+    slides[current].classList.add('active');
+    dots[current].classList.add('active');
+    counter.textContent = String(current + 1).padStart(2, '0');
+  }
+
+  function nextSlide() { goToSlide(current + 1); }
+
+  function startTimer() {
+    clearInterval(timer);
+    timer = setInterval(nextSlide, 5500);
+  }
+
+  dots.forEach((dot, i) => {
+    dot.addEventListener('click', () => { goToSlide(i); startTimer(); });
   });
 
-  /* =========================================
-     NAVBAR SCROLL
-  ========================================= */
-  const nav = document.getElementById('mainNav');
-  window.addEventListener('scroll', () => {
-    nav.classList.toggle('scrolled', window.scrollY > 50);
-  }, { passive: true });
+  startTimer();
+})();
 
-  /* =========================================
-     DARK / LIGHT THEME TOGGLE
-  ========================================= */
-  const toggleBtn = document.getElementById('themeToggle');
-  const themeIcon = document.getElementById('themeIcon');
-  const html = document.documentElement;
+/* =========================================
+   COUNTDOWN TIMER
+========================================= */
+(function() {
+  const target = new Date('2026-03-18T00:00:00');
+  function pad(n) { return String(n).padStart(2, '0'); }
 
-  // Load saved preference
-  const saved = localStorage.getItem('theme') || 'light';
-  html.setAttribute('data-bs-theme', saved);
-  themeIcon.className = saved === 'dark' ? 'bi bi-sun-fill' : 'bi bi-moon-stars-fill';
-
-  toggleBtn.addEventListener('click', () => {
-    const current = html.getAttribute('data-bs-theme');
-    const next = current === 'dark' ? 'light' : 'dark';
-    html.setAttribute('data-bs-theme', next);
-    themeIcon.className = next === 'dark' ? 'bi bi-sun-fill' : 'bi bi-moon-stars-fill';
-    localStorage.setItem('theme', next);
-  });
-
-  /* =========================================
-     COUNTDOWN TIMER — Target: Ramadan 2025
-  ========================================= */
-  (function() {
-    // Set target to ~Ramadan 2026 departure date
-    const target = new Date('2026-03-18T00:00:00');
-
-    function pad(n) { return String(n).padStart(2, '0'); }
-
-    function updateTimer() {
-      const now = new Date();
-      const diff = target - now;
-
-      if (diff <= 0) {
-        document.getElementById('cd-days').textContent  = '00';
-        document.getElementById('cd-hours').textContent = '00';
-        document.getElementById('cd-mins').textContent  = '00';
-        document.getElementById('cd-secs').textContent  = '00';
-        return;
-      }
-
-      const days  = Math.floor(diff / (1000 * 60 * 60 * 24));
-      const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-      const mins  = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
-      const secs  = Math.floor((diff % (1000 * 60)) / 1000);
-
-      document.getElementById('cd-days').textContent  = pad(days);
-      document.getElementById('cd-hours').textContent = pad(hours);
-      document.getElementById('cd-mins').textContent  = pad(mins);
-      document.getElementById('cd-secs').textContent  = pad(secs);
+  function update() {
+    const diff = target - new Date();
+    if (diff <= 0) {
+      ['cd-days','cd-hours','cd-mins','cd-secs'].forEach(id => {
+        document.getElementById(id).textContent = '00';
+      });
+      return;
     }
+    document.getElementById('cd-days').textContent  = pad(Math.floor(diff / 86400000));
+    document.getElementById('cd-hours').textContent = pad(Math.floor((diff % 86400000) / 3600000));
+    document.getElementById('cd-mins').textContent  = pad(Math.floor((diff % 3600000) / 60000));
+    document.getElementById('cd-secs').textContent  = pad(Math.floor((diff % 60000) / 1000));
+  }
+  update();
+  setInterval(update, 1000);
+})();
 
-    updateTimer();
-    setInterval(updateTimer, 1000);
-  })();
-
-  /* =========================================
-     SMOOTH SCROLL FOR NAV LINKS
-  ========================================= */
-  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-    anchor.addEventListener('click', function(e) {
-      const target = document.querySelector(this.getAttribute('href'));
-      if (target) {
-        e.preventDefault();
-        target.scrollIntoView({ behavior: 'smooth', block: 'start' });
-        // Close mobile nav
-        const collapse = document.getElementById('navMenu');
-        if (collapse.classList.contains('show')) {
-          bootstrap.Collapse.getInstance(collapse)?.hide();
-        }
+/* =========================================
+   SMOOTH SCROLL NAV
+========================================= */
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+  anchor.addEventListener('click', function(e) {
+    const target = document.querySelector(this.getAttribute('href'));
+    if (target) {
+      e.preventDefault();
+      target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      const nav = document.getElementById('navMenu');
+      if (nav.classList.contains('show')) {
+        const toggler = document.querySelector('.navbar-toggler');
+        toggler.click();
       }
-    });
+    }
   });
-</script>
+});
 
+/* =========================================
+   NUMBER COUNTER ANIMATION
+========================================= */
+function animateCounter(el, target, duration = 1800) {
+  const start = 0;
+  const step = target / (duration / 16);
+  let current = start;
+  const timer = setInterval(() => {
+    current += step;
+    if (current >= target) {
+      el.textContent = target;
+      clearInterval(timer);
+    } else {
+      el.textContent = Math.floor(current);
+    }
+  }, 16);
+}
+
+// Observe hero stats
+const heroSection = document.getElementById('hero');
+const statsObserver = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      statsObserver.disconnect();
+    }
+  });
+}, { threshold: 0.5 });
+if (heroSection) statsObserver.observe(heroSection);
+</script>
 </body>
 </html>
